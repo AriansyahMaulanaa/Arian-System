@@ -21,7 +21,7 @@ assets/icons/
 assets/fonts/
 ```
 
-The page uses Inter from Google Fonts with a system fallback. Most product previews are recreated with HTML/CSS/SVG from verified Arian System concepts. The OMS showcase also includes a copied, user-owned product screenshot at `assets/images/arian-oms-dashboard.jpg`; the Laravel source remains untouched and no reference-site asset is copied.
+The page uses Inter from Google Fonts with a system fallback. The product showcase uses six user-owned Arian System screenshots covering OMS, POS/stok, finance, izin/cuti, payroll, and karyawan; the Laravel source remains untouched and no reference-site asset is copied.
 
 ## Visual system
 
