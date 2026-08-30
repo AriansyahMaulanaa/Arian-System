@@ -47,7 +47,7 @@ The information architecture follows this order:
 
 ## CTA routing
 
-- Registration: `https://arianstars.web.id/register`
+- Pricing: `https://ariansyahmaulanaa.github.io/Arian-System/pricing`
 - Login: `https://arianstars.web.id/login`
 - Organization creation, plan selection, billing, and onboarding remain application responsibilities; the static landing page contains no SaaS business logic.
 
