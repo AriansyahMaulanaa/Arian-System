@@ -1,6 +1,6 @@
 # Arian System landing page
 
-Standalone static landing page for Arian System, located as a sibling of the Laravel repository at `D:\VScode\saas-landing-page`. The application repository is used only as a read-only product source; this project does not depend on Laravel, Vite, Alpine, or the SaaS runtime.
+Standalone static marketing site for Arian System. The page positions Arian System as a web-based operational platform for Indonesian UMKM and retail, connecting POS, OMS, inventory, purchasing, people, payroll, finance, approval, and audit.
 
 ## Run locally
 
@@ -17,30 +17,58 @@ index.html
 css/style.css
 js/main.js
 assets/images/
-assets/icons/
-assets/fonts/
+assets/icons/favicon.svg
+robots.txt
+sitemap.xml
 ```
 
-The page uses Inter from Google Fonts with a system fallback. The product showcase uses six user-owned Arian System screenshots covering OMS, POS/stok, finance, izin/cuti, payroll, and karyawan; the Laravel source remains untouched and no reference-site asset is copied.
+## Product flow
+
+The information architecture follows this order:
+
+1. Hero and primary SaaS CTA
+2. Connected operations value
+3. POS and OMS relationship
+4. Operational workflow
+5. Role, approval, outlet, and audit control
+6. Real product screenshots
+7. Business growth path from one to multiple outlets
+8. Product usage process
+9. Monthly pricing
+10. Product credibility, FAQ, and final CTA
+
+## Commercial facts
+
+- Starter: Rp249.000/month — 1 outlet, up to 10 users
+- Growth: Rp649.000/month — up to 3 outlets, up to 30 users
+- Scale: Rp1.799.000/month — up to 10 outlets, up to 100 users
+- Growth is the most popular plan.
+- No annual price, discount, trial, SLA, or Enterprise price is claimed.
+
+## CTA routing
+
+- Registration: `https://arianstars.web.id/register`
+- Login: `https://arianstars.web.id/login`
+- Organization creation, plan selection, billing, and onboarding remain application responsibilities; the static landing page contains no SaaS business logic.
 
 ## Visual system
 
-- Reference-driven editorial hero with a minimal three-zone navigation, edge metadata, dominant display title, asymmetric supporting copy, capability index, and product marks.
-- Section order follows the reference rhythm: introduction, ticker, about, projects, ticker, services, dark commercial block, overlap principle, process, experience, insights, FAQ reel, closing contact, footer.
-- Product mockups are intentionally excluded from the hero and placed in a staggered 7-column showcase.
-- Motion uses native CSS and a small dependency-free script: load reveal, viewport reveal, marquee, service activation, subtle pointer tilt, accessible process tabs, and FAQ accordion.
+- Existing editorial/technical identity retained: dark operational surfaces, assertive typography, cobalt accent, grid, monospace labels, restrained secondary colors, and minimal decoration.
+- Existing CSS variables remain the single token source.
+- Six user-owned Arian System screenshots are reused as product proof; optimized WebP derivatives are served while the original PNG files remain the source assets.
+- Motion is dependency-free and respects `prefers-reduced-motion`.
 
-## Validation
+## Validation expectations
 
-- JavaScript syntax checked with `node --check`.
-- All local HTML, CSS, and JavaScript endpoints return HTTP 200 through a local static server.
-- Internal anchors and HTML IDs are checked for missing and duplicate targets.
-- Responsive rules cover 320, 375, 390, 414, 768, 1024, 1280, 1440, and 1920px classes.
-- `prefers-reduced-motion` disables continuous and transform-heavy motion.
+- JavaScript syntax via `node --check js/main.js`
+- Local endpoints and internal anchors
+- W3C markup validation
+- Desktop, tablet, and mobile browser checks
+- Keyboard navigation, mobile-menu focus trap, FAQ, tabs, and reduced motion
+- Console and network error inspection before deployment
 
 ## Product guardrails
 
-- No public price was found, so pricing cards use conversation CTAs.
-- No verified customer count, testimonials, ratings, or performance metrics were found, so none are claimed.
-- Contact routing is intentionally an anchor placeholder until a public endpoint is chosen.
-- The implementation uses no runtime dependency and honors `prefers-reduced-motion`.
+- No customer logos, testimonials, user counts, revenue metrics, performance claims, awards, certifications, integrations, payment methods, uptime, or SLA are invented.
+- Technical capabilities are presented as supporting evidence, not primary buyer messaging.
+- `CNAME` currently names `arianstars.web.id`, while the marketing canonical remains the supplied GitHub Pages URL; hosting/domain architecture should be reviewed before changing canonical metadata.

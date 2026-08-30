@@ -42,11 +42,30 @@ Arian System brings those workflows into one role-aware workspace. The source sh
 
 ## Information gap — do not invent
 
-- Public pricing or package limits: not found.
+- Annual pricing, discounts, payment methods, trial policy, billing lifecycle, upgrade behavior, or Enterprise price: not confirmed.
 - Verified customer names, testimonials, ratings, or case studies: not found.
 - Customer count, revenue lift, conversion rate, uptime, or other business metrics: not found.
 - Public demo URL or contact endpoint: not found.
 - Formal security/compliance certification claims: not found.
+
+## Commercial facts supplied by the product owner
+
+These facts were supplied directly for the SaaS landing page on 2026-08-30 and are separate from source-code evidence.
+
+| Plan | Monthly price | Outlet limit | User limit | Positioning |
+| --- | ---: | ---: | ---: | --- |
+| Starter | Rp249.000 | 1 | 10 | One-outlet business organizing POS, stock, and team operations |
+| Growth | Rp649.000 | 3 | 30 | Growing business adding purchasing, stock transfer, payroll, KPI, and approval |
+| Scale | Rp1.799.000 | 10 | 100 | Multi-outlet operation requiring centralized finance, access control, audit, and consolidated reports |
+
+Growth is the “Paling Populer” plan. A business above the Scale limits may discuss future needs, but no Enterprise price is published.
+
+## Verified public application entry points
+
+- Registration: `https://arianstars.web.id/register`
+- Login: `https://arianstars.web.id/login`
+
+The registration route is public. Organization creation, plan handoff, trial/payment, and onboarding behavior were not verified as part of the static landing-page implementation and must remain application concerns.
 
 ## Marketing direction
 

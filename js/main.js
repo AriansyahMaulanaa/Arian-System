@@ -10,8 +10,10 @@
   const header = document.querySelector('[data-header]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
+  const main = document.querySelector('main');
+  const footer = document.querySelector('footer');
   const intro = document.querySelector('.intro');
-  const heroTitle = document.querySelector('.hero-title-wrap h1');
+  const heroTitle = document.querySelector('.hero-title-wrap');
   const heroSlogan = document.querySelector('.hero-slogan');
   const heroRadialLeft = document.querySelector('.hero-radial--left');
   const heroRadialRight = document.querySelector('.hero-radial--right');
@@ -19,6 +21,32 @@
   let scrollFrame = 0;
   let previousScrollY = window.scrollY;
   let lastDirection = 'up';
+
+  const setPageInert = (isInert) => {
+    [main, footer].forEach((element) => {
+      if (!element) return;
+      element.inert = isInert;
+    });
+  };
+
+  const setMenu = (isOpen, returnFocus = false) => {
+    if (!menuToggle || !mobileMenu) return;
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu.classList.toggle('is-open', isOpen);
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+    mobileMenu.inert = !isOpen;
+    document.body.classList.toggle('menu-open', isOpen);
+    setPageInert(isOpen);
+
+    const label = menuToggle.querySelector('.sr-only');
+    if (label) label.textContent = isOpen ? 'Tutup menu' : 'Buka menu';
+
+    if (isOpen) {
+      requestAnimationFrame(() => mobileMenu.querySelector('a')?.focus());
+    } else if (returnFocus) {
+      menuToggle.focus();
+    }
+  };
 
   const paintScrollState = () => {
     scrollFrame = 0;
@@ -29,65 +57,77 @@
 
     if (header) {
       header.classList.toggle('is-scrolled', currentScrollY > 18);
-      header.classList.toggle('is-hidden', currentScrollY > 90 && lastDirection === 'down');
+      header.classList.toggle('is-hidden', currentScrollY > 120 && lastDirection === 'down');
     }
 
-    if (!reducedMotion && intro && intro.getBoundingClientRect().bottom > 0) {
-      const progress = Math.min(1, Math.max(0, window.scrollY / Math.max(window.innerHeight, 1)));
-      if (heroTitle) heroTitle.style.transform = `translate3d(0, ${progress * 54}px, 0) scale(${1 - progress * 0.025})`;
-      if (heroSlogan) heroSlogan.style.translate = `0 ${progress * 24}px`;
-      if (heroRadialLeft) heroRadialLeft.style.translate = `${progress * 42}px ${progress * -24}px`;
-      if (heroRadialRight) heroRadialRight.style.translate = `${progress * -35}px ${progress * 30}px`;
+    if (!reducedMotion && finePointer && intro && intro.getBoundingClientRect().bottom > 0) {
+      const progress = Math.min(1, Math.max(0, currentScrollY / Math.max(window.innerHeight, 1)));
+      if (heroTitle && progress > 0) heroTitle.style.transform = `translate3d(0, ${progress * 30}px, 0)`;
+      if (heroSlogan) heroSlogan.style.translate = `0 ${progress * 14}px`;
+      if (heroRadialLeft) heroRadialLeft.style.translate = `${progress * 30}px ${progress * -18}px`;
+      if (heroRadialRight) heroRadialRight.style.translate = `${progress * -24}px ${progress * 20}px`;
     }
 
-    if (!reducedMotion) {
+    if (!reducedMotion && finePointer) {
       parallaxCards.forEach((card) => {
         const rect = card.getBoundingClientRect();
         if (rect.bottom < 0 || rect.top > window.innerHeight) return;
         const distance = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
-        const shift = Math.max(-22, Math.min(22, distance * -28));
+        const shift = Math.max(-16, Math.min(16, distance * -20));
         card.style.setProperty('--media-shift', `${shift.toFixed(2)}px`);
       });
     }
   };
 
+  setMenu(false);
   paintScrollState();
+
   window.addEventListener('scroll', () => {
-    if (mobileMenu?.classList.contains('is-open')) setMenu(false);
     if (!scrollFrame) scrollFrame = requestAnimationFrame(paintScrollState);
   }, { passive: true });
 
-  const setMenu = (isOpen) => {
-    if (!menuToggle || !mobileMenu) return;
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
-    mobileMenu.classList.toggle('is-open', isOpen);
-    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
-    document.body.classList.toggle('menu-open', isOpen);
-    const label = menuToggle.querySelector('.sr-only');
-    if (label) label.textContent = isOpen ? 'Tutup menu' : 'Buka menu';
-  };
-
-  setMenu(false);
   menuToggle?.addEventListener('click', () => {
-    setMenu(menuToggle.getAttribute('aria-expanded') !== 'true');
+    setMenu(menuToggle.getAttribute('aria-expanded') !== 'true', true);
   });
+
   document.querySelectorAll('[data-mobile-link]').forEach((link) => {
     link.addEventListener('click', () => setMenu(false));
   });
+
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setMenu(false);
+    const menuIsOpen = menuToggle?.getAttribute('aria-expanded') === 'true';
+    if (event.key === 'Escape' && menuIsOpen) {
+      event.preventDefault();
+      setMenu(false, true);
+      return;
+    }
+
+    if (event.key !== 'Tab' || !menuIsOpen || !mobileMenu || !menuToggle) return;
+    const focusable = [menuToggle, ...mobileMenu.querySelectorAll('a[href], button:not([disabled])')];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
+
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 809) setMenu(false);
+    if (window.innerWidth > 900) setMenu(false);
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(paintScrollState);
   }, { passive: true });
 
   const revealItems = [...document.querySelectorAll('[data-reveal]')];
-  const staggerGroups = ['.project-grid', '.service-list', '.pricing-grid', '.experience-grid', '.insight-grid'];
+  const staggerGroups = ['.value-grid', '.control-grid', '.project-grid', '.pricing-grid', '.credibility-list'];
   staggerGroups.forEach((selector) => {
     document.querySelectorAll(`${selector} > [data-reveal]`).forEach((item, index) => {
-      item.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 85}ms`);
+      item.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 75}ms`);
     });
   });
+
   if (reducedMotion || !('IntersectionObserver' in window)) {
     revealItems.forEach((item) => item.classList.add('is-visible'));
   } else {
@@ -97,15 +137,12 @@
         entry.target.classList.add('is-visible');
         observer.unobserve(entry.target);
       });
-    }, { rootMargin: '0px 0px -9% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.07 });
     revealItems.forEach((item) => revealObserver.observe(item));
   }
 
   const navLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-  const navSections = navLinks
-    .map((link) => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
-
+  const navSections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
   if ('IntersectionObserver' in window) {
     const navObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -114,7 +151,7 @@
           link.classList.toggle('is-active', link.getAttribute('href') === `#${entry.target.id}`);
         });
       });
-    }, { rootMargin: '-34% 0px -60% 0px', threshold: 0 });
+    }, { rootMargin: '-30% 0px -62% 0px', threshold: 0 });
     navSections.forEach((section) => navObserver.observe(section));
   }
 
@@ -129,7 +166,7 @@
         const rect = card.getBoundingClientRect();
         const x = (clientX - rect.left) / rect.width - 0.5;
         const y = (clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(1100px) rotateX(${y * -2.4}deg) rotateY(${x * 3.2}deg) translateY(-7px)`;
+        card.style.transform = `perspective(1200px) rotateX(${y * -1.7}deg) rotateY(${x * 2.3}deg) translateY(-5px)`;
       };
 
       card.addEventListener('pointermove', (event) => {
@@ -137,6 +174,7 @@
         clientY = event.clientY;
         if (!tiltFrame) tiltFrame = requestAnimationFrame(paintTilt);
       }, { passive: true });
+
       card.addEventListener('pointerleave', () => {
         if (tiltFrame) cancelAnimationFrame(tiltFrame);
         tiltFrame = 0;
@@ -145,18 +183,8 @@
     });
   }
 
-  const serviceRows = [...document.querySelectorAll('[data-service-row]')];
-  const activateService = (activeRow) => {
-    serviceRows.forEach((row) => row.classList.toggle('is-active', row === activeRow));
-  };
-  serviceRows.forEach((row) => {
-    row.addEventListener('pointerenter', () => activateService(row), { passive: true });
-    row.addEventListener('focusin', () => activateService(row));
-  });
-
   const processTabs = [...document.querySelectorAll('[data-process-tab]')];
   const processPanels = [...document.querySelectorAll('[data-process-panel]')];
-
   const selectProcess = (index, moveFocus = false) => {
     processTabs.forEach((tab, tabIndex) => {
       const isActive = tabIndex === index;
@@ -198,24 +226,5 @@
         if (answer) answer.hidden = !isCurrent;
       });
     });
-  });
-
-  const billingToggle = document.querySelector('[data-billing-toggle]');
-  const billingSwitch = billingToggle?.querySelector('button');
-  const billingPrices = [...document.querySelectorAll('.price-amount strong[data-monthly]')];
-  const billingPeriods = [...document.querySelectorAll('.price-amount span[data-period]')];
-
-  const setBillingPeriod = (isAnnual) => {
-    billingSwitch?.setAttribute('aria-checked', String(isAnnual));
-    billingPrices.forEach((price) => {
-      price.textContent = isAnnual ? price.dataset.annual : price.dataset.monthly;
-    });
-    billingPeriods.forEach((period) => {
-      period.textContent = isAnnual ? '/TAHUN' : '/BULAN';
-    });
-  };
-
-  billingSwitch?.addEventListener('click', () => {
-    setBillingPeriod(billingSwitch.getAttribute('aria-checked') !== 'true');
   });
 })();
