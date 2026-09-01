@@ -47,13 +47,13 @@ The information architecture follows this order:
 
 ## CTA routing
 
-- Pricing: `https://ariansyahmaulanaa.github.io/Arian-System/pricing`
+- Register: `https://arianstars.web.id/register`
 - Login: `https://arianstars.web.id/login`
 - Organization creation, plan selection, billing, and onboarding remain application responsibilities; the static landing page contains no SaaS business logic.
 
 ## Visual system
 
-- Existing editorial/technical identity retained: dark operational surfaces, assertive typography, cobalt accent, grid, monospace labels, restrained secondary colors, and minimal decoration.
+- Editorial/technical identity uses light paper surfaces, assertive black typography, blue-only gradient glows, dark contrast sections, grid, monospace labels, and restrained decoration.
 - Existing CSS variables remain the single token source.
 - Six user-owned Arian System screenshots are reused as product proof; optimized WebP derivatives are served while the original PNG files remain the source assets.
 - Motion is dependency-free and respects `prefers-reduced-motion`.
