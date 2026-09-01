@@ -17,7 +17,6 @@
   const heroSlogan = document.querySelector('.hero-slogan');
   const heroRadialLeft = document.querySelector('.hero-radial--left');
   const heroRadialRight = document.querySelector('.hero-radial--right');
-  const parallaxCards = [...document.querySelectorAll('.project-card')];
   let scrollFrame = 0;
   let previousScrollY = window.scrollY;
   let lastDirection = 'up';
@@ -68,15 +67,6 @@
       if (heroRadialRight) heroRadialRight.style.translate = `${progress * -24}px ${progress * 20}px`;
     }
 
-    if (!reducedMotion && finePointer) {
-      parallaxCards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-        const distance = (rect.top + rect.height / 2 - window.innerHeight / 2) / window.innerHeight;
-        const shift = Math.max(-16, Math.min(16, distance * -20));
-        card.style.setProperty('--media-shift', `${shift.toFixed(2)}px`);
-      });
-    }
   };
 
   setMenu(false);
@@ -155,34 +145,6 @@
     navSections.forEach((section) => navObserver.observe(section));
   }
 
-  if (!reducedMotion && finePointer) {
-    document.querySelectorAll('[data-tilt]').forEach((card) => {
-      let tiltFrame = 0;
-      let clientX = 0;
-      let clientY = 0;
-
-      const paintTilt = () => {
-        tiltFrame = 0;
-        const rect = card.getBoundingClientRect();
-        const x = (clientX - rect.left) / rect.width - 0.5;
-        const y = (clientY - rect.top) / rect.height - 0.5;
-        card.style.transform = `perspective(1200px) rotateX(${y * -1.7}deg) rotateY(${x * 2.3}deg) translateY(-5px)`;
-      };
-
-      card.addEventListener('pointermove', (event) => {
-        clientX = event.clientX;
-        clientY = event.clientY;
-        if (!tiltFrame) tiltFrame = requestAnimationFrame(paintTilt);
-      }, { passive: true });
-
-      card.addEventListener('pointerleave', () => {
-        if (tiltFrame) cancelAnimationFrame(tiltFrame);
-        tiltFrame = 0;
-        card.style.transform = '';
-      }, { passive: true });
-    });
-  }
-
   const processTabs = [...document.querySelectorAll('[data-process-tab]')];
   const processPanels = [...document.querySelectorAll('[data-process-panel]')];
   const selectProcess = (index, moveFocus = false) => {
@@ -215,6 +177,46 @@
   });
 
   const faqTriggers = [...document.querySelectorAll('[data-faq-trigger]')];
+  const setFaqAnswer = (answer, shouldOpen) => {
+    if (!answer) return;
+    if (!answer.animate || !answer.getAnimations) {
+      answer.hidden = !shouldOpen;
+      return;
+    }
+    answer.getAnimations().forEach((animation) => animation.cancel());
+
+    if (reducedMotion) {
+      answer.hidden = !shouldOpen;
+      return;
+    }
+
+    if (shouldOpen) {
+      answer.hidden = false;
+      const targetHeight = answer.scrollHeight;
+      const animation = answer.animate([
+        { height: '0px', opacity: 0 },
+        { height: `${targetHeight}px`, opacity: 1 }
+      ], { duration: 380, easing: 'cubic-bezier(.16, 1, .3, 1)' });
+      answer.style.overflow = 'hidden';
+      animation.addEventListener('finish', () => {
+        answer.style.removeProperty('overflow');
+      }, { once: true });
+      return;
+    }
+
+    if (answer.hidden) return;
+    const startHeight = answer.getBoundingClientRect().height;
+    const animation = answer.animate([
+      { height: `${startHeight}px`, opacity: 1 },
+      { height: '0px', opacity: 0 }
+    ], { duration: 280, easing: 'cubic-bezier(.44, 0, .34, .98)' });
+    answer.style.overflow = 'hidden';
+    animation.addEventListener('finish', () => {
+      answer.hidden = true;
+      answer.style.removeProperty('overflow');
+    }, { once: true });
+  };
+
   faqTriggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
       const shouldOpen = trigger.getAttribute('aria-expanded') !== 'true';
@@ -223,7 +225,7 @@
         const isCurrent = other === trigger && shouldOpen;
         other.setAttribute('aria-expanded', String(isCurrent));
         other.closest('.faq-item')?.classList.toggle('is-open', isCurrent);
-        if (answer) answer.hidden = !isCurrent;
+        setFaqAnswer(answer, isCurrent);
       });
     });
   });
