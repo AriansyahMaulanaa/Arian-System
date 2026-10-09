@@ -1,82 +1,76 @@
 # Product understanding report
 
-Source: read-only inspection of the sibling Laravel repository `ArianHR`. The standalone landing source is outside that Git root.
+Source: read-only inspection of the sibling Laravel repository `ArianHR`, the Arian System landing-page source, and product-owner planning in this conversation. The standalone landing source is outside that Laravel Git root.
 
-## Product identity
+## Product identity and audience
 
-- Name: Arian System
-- Type: web-based all-in-one operational management platform
-- Industry: UMKM / retail and operational businesses
-- Primary users: owners and operational managers, HR/admin, supervisors, cashiers, directors, and employees
-- Roles found in seed/config: `super_admin`, `admin_hr`, `manager`, `SPV`, `kasir`, `direktur`, `karyawan`
+- Current page brand: Arian System. A possible future brand change is not confirmed and is not applied here.
+- Product direction: operational management for Indonesian small businesses, retail, and multi-outlet operators.
+- Main work areas: POS, stock, purchasing, employees, attendance, payroll, finance, approvals, and audit.
+- Roles found in application seed/config include owner/admin, HR, manager/supervisor, cashier, director, and employee.
 
-## Core problem
+## Product capabilities verified in the sibling application source
 
-The application addresses fragmented operational work: attendance and employee administration, point-of-sale activity, stock movement, purchasing, cash and accounting records, approvals, and performance tracking otherwise require disconnected workflows and manual reconciliation.
-
-## Core solution
-
-Arian System brings those workflows into one role-aware workspace. The source shows OMS/HR and POS modes, outlet/branch scope, dashboards and reports, approval flows, notifications, append-only audit logging, offline/PWA support, and synchronization services.
-
-## Verified feature set used in the page
-
-| Feature | Source evidence | Landing-page angle |
+| Area | Source evidence | User-facing value |
 | --- | --- | --- |
-| OMS / HR | employee, attendance, leave, overtime, shift, payroll, THR, compensation controllers and views | Organize people and daily operations |
-| POS | product catalog, barcode scan, cart, shifts, pending transactions, cash/debit/QRIS payment flow, receipt printing | Keep checkout fast and traceable |
-| Inventory | master products, stock, stock mutations, low-stock checks, stock opname, goods receipt | See stock before it interrupts sales |
-| Procurement | supplier and purchase order modules | Connect incoming goods to operations |
-| Finance | cash bank, journals, ledger, invoices, payable/receivable, petty cash, reimbursement, cash advance, payment request, reports | Keep financial context close to activity |
-| Control | Spatie permissions/RBAC, branch scope, approval PIN, stock adjustment approval, POS fraud review | Make sensitive decisions reviewable |
-| Audit | append-only `AuditLog`, activity filters, user/action/module/IP/device/GPS fields | Give changes a durable trail |
-| KPI / sales | targets, periods, components, scores, sales reports and dashboard APIs | Turn operational data into reviewable signals |
-| Notifications / PWA | in-app notifications, low-stock/pending alerts, service worker, offline state, synchronization module | Support teams beyond a single desktop session |
+| POS | Product catalog, barcode scan, cart, shifts, pending transactions, payment flow, and receipt printing | Record sales and cashier activity |
+| Inventory | Product master, stock movements, low-stock checks, opname, and goods receipts | Review stock and incoming goods |
+| Procurement | Supplier and purchase-order modules | Record purchasing work |
+| HR | Employee, attendance, leave, overtime, shift, payroll, and compensation modules | Coordinate team administration |
+| Finance | Cash/bank, journals, ledger, invoices, receivables/payables, petty cash, reimbursements, and reports | Keep financial records near operations |
+| Operational control | Role/permission checks, outlet scope, approval PIN, stock-adjustment approval, POS cancellation rules | Restrict sensitive actions and route approvals |
+| Audit and monitoring | Audit records, fraud review, alerts, notifications, KPI and sales reports | Review operational events and decisions |
+| Offline/sync foundations | Local-first repositories, offline state, signed entitlement objects, device/cloud policy, and sync transports | Technical foundation for local and connected workflows |
 
-## Differentiators grounded in source
+These source capabilities do **not** prove that every feature is ready for every public plan, platform, or role. Menu gating and package entitlements must be checked against the application before the plan matrix is treated as an offer.
 
-- POS cancellation and sensitive stock adjustment flows include Leader/SPV approval and PIN verification.
-- Audit logs are guarded against update and delete at the model level.
-- Role and branch/outlet scope are applied to operational access.
-- Pending transactions, low-stock alerts, approval states, and fraud-review views are first-class workflows.
-- Payroll processing is designed around queued work; dashboard and KPI aggregation use caching per the project documentation.
+## Commercial package proposal — not final
 
-## Information gap — do not invent
+Product-owner planning proposes five packages, with local use for the first three and cloud connectivity for Business/Enterprise. The landing displays the matrix as a draft only.
 
-- Annual pricing, discounts, payment methods, trial policy, billing lifecycle, upgrade behavior, or Enterprise price: not confirmed.
-- Verified customer names, testimonials, ratings, or case studies: not found.
-- Customer count, revenue lift, conversion rate, uptime, or other business metrics: not found.
-- Public demo URL or contact endpoint: not found.
-- Formal security/compliance certification claims: not found.
+| Package | Monthly draft | Annual draft | Outlets | Operational devices | Admin/operator accounts | Active employees |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Gratis | Rp0 | Rp0 | 1 | 1 | 1 | — |
+| Dasar | Rp29.000 | Rp290.000 | 1 | 1 | 3 | — |
+| Tumbuh | Rp79.000 | Rp790.000 | 1 | 1 | 10 | 30 |
+| Business | Rp349.000 | Rp3.490.000 | 2 | 3 | 10 | 50 |
+| Enterprise | Rp1.499.000 | Rp14.990.000 | 5 | 10 | 30 | 150 |
 
-## Commercial facts supplied by the product owner
+The annual draft equals ten monthly payments and is an upfront total. Proposed Business/Enterprise add-ons are Rp10.000/month per admin/operator, Rp25.000/month per operational device, Rp99.000/month per outlet bundle (two devices and five admin/operator accounts), and Rp50.000/month per 25 active employees with self-service access.
 
-These facts were supplied directly for the SaaS landing page on 2026-08-30 and are separate from source-code evidence.
+Product-menu assignment, per-plan product/supplier capacities, cloud attachment quotas, employee self-service permissions, offline license refresh/grace behavior, backup and retention terms, pricing tax treatment, support boundaries, and cloud-load limits remain to be validated. The static registration link does not select a plan or accept payment. Do not claim these as released subscription capabilities.
 
-| Plan | Monthly price | Outlet limit | User limit | Positioning |
-| --- | ---: | ---: | ---: | --- |
-| Starter | Rp249.000 | 1 | 10 | One-outlet business organizing POS, stock, and team operations |
-| Growth | Rp649.000 | 3 | 30 | Growing business adding purchasing, stock transfer, payroll, KPI, and approval |
-| Scale | Rp1.799.000 | 10 | 100 | Multi-outlet operation requiring centralized finance, access control, audit, and consolidated reports |
+## Competitor pricing snapshot reviewed for planning
 
-Growth is the “Paling Populer” plan. A business above the Scale limits may discuss future needs, but no Enterprise price is published.
+- Olsera's official pricing page displayed Basic at Rp1.288.000/year, Premium at Rp1.988.000/year, and Pro at Rp2.688.000/year alongside higher reference prices. The page states prices exclude VAT; these are annual prices and do not establish equivalent monthly or multi-outlet terms. Source: https://www.olsera.com/id/pricing
+- Mekari Talenta's official pricing page presents Essential, Plus, and Talenta 360 but directs prospects to WhatsApp sales instead of publishing a public price. A matching quote by employee count and scope is required before price comparison. Source: https://www.talenta.co/harga/
+- This snapshot is a planning reference, not a full competitor survey or proof that Arian is cheaper/equivalent.
+
+## Platform and release direction
+
+- Web login currently routes to `https://arianstars.web.id/login`.
+- Product-owner target platforms: Web, Windows, Linux, and Android. Windows/Linux downloads and the Android Google Play destination are design placeholders until real releases/listing URLs exist.
+- macOS and iOS are future possibilities with no promised release dates. App Store costs were discussed as a product constraint; they are not exposed as a customer-facing claim.
+- Do not present Windows/Linux/Android download controls as active, invent store URLs, or claim offline behavior uniformly across platforms.
 
 ## Verified public application entry points
 
 - Registration: `https://arianstars.web.id/register`
 - Login: `https://arianstars.web.id/login`
 
-The registration route is public. Organization creation, plan handoff, trial/payment, and onboarding behavior were not verified as part of the static landing-page implementation and must remain application concerns.
+Organization creation, plan selection, billing, trials, upgrade/downgrade, downloads, and onboarding are application responsibilities and were not implemented by this static landing page.
 
-## Marketing direction
+## Landing-page direction
 
-Primary value proposition: “Operasional bisnis lebih rapi karena aktivitas, transaksi, stok, tim, dan kontrol kerja terlihat dalam satu sistem.”
+- Keep the existing editorial design: paper-gray surfaces, large black typography, blue accents, dark contrast areas, thin rules, restrained motion, and product screenshots.
+- Make the value proposition and local-vs-cloud distinction immediately understandable.
+- Use Indonesian for navigation, package descriptions, platform status, and the primary user explanation; retain familiar product terms where useful.
+- Show monthly and annual plan totals, package limits, employee access versus operational devices, and draft status clearly.
+- Keep disabled platform controls genuinely disabled until release assets/listing destinations exist.
 
-Emotional benefit: less uncertainty between the work happening in the field and the decisions made by the owner or manager.
+## Information not verified
 
-Functional benefit: one role-aware surface for the operational records, approvals, alerts, and review trails that the application already supports.
-
-## Reference audit summary
-
-The reference page is a Framer agency/portfolio page whose actual rhythm is introduction, ticker, about, projects, ticker, services, pricing, overlapping statement/testimonial, process, experiences, latest insights, FAQ reel, closing contact, and footer. The introduction uses a minimal horizontal navigation, edge metadata, one dominant 174px desktop title, asymmetric supporting text, compact proof, a right-side capability list, and marks near the bottom—not a conventional two-column SaaS hero. Its responsive variants use desktop/tablet/mobile thresholds around 1200px and 810px, with a container near 1380px, 32px desktop gutters, and 24px/20px mobile gutters. Motion is primarily opacity plus translate/scale reveal, spring-like entrances, hover movement, continuous marquees, and interactive process pacing.
-
-This project reconstructs that section sequence, spatial hierarchy, oversized typography, staggered showcase proportions, overlapping blocks, marquee, scroll reveal, hover, process tabs, and accordion behavior with new Arian System content and code. Product previews have been moved below the hero and recreated from verified modules. It does not copy the reference name, text, photographs, illustrations, logo, or hosted assets.
+- Final prices, tax status, billing lifecycle, trial policy, annual renewal terms, refunds, and plan activation.
+- Final plan feature gating, device/account enforcement, add-on implementation, cloud capacity, offline licensing period, retention, backup guarantees, and support SLA.
+- Official Windows/Linux release links, Android Play listing, and macOS/iOS release dates.
+- Customer references, case studies, ratings, customer counts, revenue outcomes, uptime, security certifications, or quantified performance claims.

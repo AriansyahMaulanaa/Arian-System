@@ -131,6 +131,38 @@
     revealItems.forEach((item) => revealObserver.observe(item));
   }
 
+  const billingChoices = [...document.querySelectorAll('[data-billing-choice]')];
+  const billingPrices = [...document.querySelectorAll('[data-plan-price]')];
+  const billingNote = document.querySelector('[data-billing-note]');
+  const selectBillingPeriod = (period) => {
+    const isAnnual = period === 'annual';
+    billingChoices.forEach((choice) => {
+      const isActive = choice.dataset.billingChoice === period;
+      choice.classList.toggle('is-active', isActive);
+      choice.setAttribute('aria-pressed', String(isActive));
+    });
+    billingPrices.forEach((price) => {
+      const priceValue = isAnnual ? price.dataset.annual : price.dataset.monthly;
+      const periodLabel = price.parentElement?.querySelector('[data-plan-period]');
+      const periodValue = isAnnual
+        ? periodLabel?.dataset.annualPeriod
+        : periodLabel?.dataset.monthlyPeriod;
+      if (priceValue) price.textContent = priceValue;
+      if (periodValue && periodLabel) periodLabel.textContent = periodValue;
+    });
+    if (billingNote) {
+      billingNote.textContent = isAnnual
+        ? 'Tagihan dibayar sekaligus; setara 10 bulan harga bulanan.'
+        : 'Bayar setiap bulan sesuai paket.';
+    }
+  };
+
+  billingChoices.forEach((choice) => {
+    choice.addEventListener('click', () => {
+      selectBillingPeriod(choice.dataset.billingChoice === 'annual' ? 'annual' : 'monthly');
+    });
+  });
+
   const navLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
   const navSections = navLinks.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
   if ('IntersectionObserver' in window) {
