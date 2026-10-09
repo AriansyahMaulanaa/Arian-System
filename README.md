@@ -35,7 +35,7 @@ sitemap.xml
 
 ## Subscription plan — planning draft only
 
-These values were supplied during product planning. They are displayed with a clear draft disclaimer and are not an active offer or billing configuration.
+The table below reflects the prices and device limits currently shown on the landing page. This static site links to account registration but does not process package selection or payments.
 
 | Package | Monthly draft | Annual draft | Shops/branches | Maximum devices (all roles) |
 | --- | ---: | ---: | ---: | ---: |
