@@ -26,9 +26,9 @@ These source capabilities do **not** prove that every feature is ready for every
 
 ## Commercial package proposal — not final
 
-Product-owner planning proposes five packages, with data stored on-device for the first three and online synchronization for Business/Enterprise. The landing displays only draft prices and simple shop/device summaries; detailed account, employee, catalog, supplier, and storage limits are omitted while they remain unverified.
+Product-owner planning proposes five packages, with data stored on-device for the first three and online synchronization for Business/Enterprise. The landing displays only draft prices and simple shop/device summaries; detailed account, employee, catalog, supplier, and storage limits are omitted while they remain unverified. The device cap is a single organization-wide total across branches and roles, including employee phones used to sign in for attendance.
 
-| Package | Monthly draft | Annual draft | Shops/branches | Cashier/admin devices |
+| Package | Monthly draft | Annual draft | Shops/branches | Maximum devices (all roles) |
 | --- | ---: | ---: | ---: | ---: |
 | Gratis | Rp0 | Rp0 | 1 shop | 1 |
 | Dasar | Rp29.000 | Rp290.000 | 1 shop | 1 |
@@ -36,7 +36,7 @@ Product-owner planning proposes five packages, with data stored on-device for th
 | Business | Rp349.000 | Rp3.490.000 | 2 shops | 3 |
 | Enterprise | Rp1.499.000 | Rp14.990.000 | 5 branches | 10 |
 
-The annual draft equals ten monthly payments and is an upfront total. No add-on rates are published; special requirements should be discussed with an admin rather than shown as fixed prices.
+The annual draft equals ten monthly payments and is an upfront total. The device cap is shared by all users in the organization, regardless of role; an employee's attendance phone counts as a device. No add-on rates are published; special requirements should be discussed with an admin rather than shown as fixed prices.
 
 Product-menu assignment, account and employee limits, product/supplier capacities, cloud storage quotas, employee self-service permissions, offline license refresh/grace behavior, backup and retention terms, tax treatment, support boundaries, and cloud-load limits remain to be validated. The static registration link does not select a plan or accept payment. Do not claim these as released subscription capabilities.
 

@@ -37,7 +37,7 @@ sitemap.xml
 
 These values were supplied during product planning. They are displayed with a clear draft disclaimer and are not an active offer or billing configuration.
 
-| Package | Monthly draft | Annual draft | Shops/branches | Cashier/admin devices |
+| Package | Monthly draft | Annual draft | Shops/branches | Maximum devices (all roles) |
 | --- | ---: | ---: | ---: | ---: |
 | Gratis | Rp0 | Rp0 | 1 shop | 1 |
 | Dasar | Rp29.000 | Rp290.000 | 1 shop | 1 |
@@ -45,7 +45,7 @@ These values were supplied during product planning. They are displayed with a cl
 | Business | Rp349.000 | Rp3.490.000 | 2 shops | 3 |
 | Enterprise | Rp1.499.000 | Rp14.990.000 | 5 branches | 10 |
 
-Annual draft amounts equal ten monthly payments and are shown as an upfront total. Prices and package contents remain drafts. Account/employee caps, technical quotas, and add-on prices are not displayed while product and service capacity is still being validated. Special requirements should be discussed with an admin rather than presented as fixed add-on prices.
+Annual draft amounts equal ten monthly payments and are shown as an upfront total. Device limits are one total per organization, across its branches and all roles; employee phones used to sign in for attendance count toward the same limit. Prices and package contents remain drafts. Account/employee caps, technical quotas, and add-on prices are not displayed while product and service capacity is still being validated. Special requirements should be discussed with an admin rather than presented as fixed add-on prices.
 
 ## Platform availability
 
