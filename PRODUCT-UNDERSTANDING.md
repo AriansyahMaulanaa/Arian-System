@@ -26,19 +26,19 @@ These source capabilities do **not** prove that every feature is ready for every
 
 ## Commercial package proposal — not final
 
-Product-owner planning proposes five packages, with local use for the first three and cloud connectivity for Business/Enterprise. The landing displays the matrix as a draft only.
+Product-owner planning proposes five packages, with data stored on-device for the first three and online synchronization for Business/Enterprise. The landing displays only draft prices and simple shop/device summaries; detailed account, employee, catalog, supplier, and storage limits are omitted while they remain unverified.
 
-| Package | Monthly draft | Annual draft | Outlets | Operational devices | Admin/operator accounts | Active employees |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Gratis | Rp0 | Rp0 | 1 | 1 | 1 | — |
-| Dasar | Rp29.000 | Rp290.000 | 1 | 1 | 3 | — |
-| Tumbuh | Rp79.000 | Rp790.000 | 1 | 1 | 10 | 30 |
-| Business | Rp349.000 | Rp3.490.000 | 2 | 3 | 10 | 50 |
-| Enterprise | Rp1.499.000 | Rp14.990.000 | 5 | 10 | 30 | 150 |
+| Package | Monthly draft | Annual draft | Shops/branches | Cashier/admin devices |
+| --- | ---: | ---: | ---: | ---: |
+| Gratis | Rp0 | Rp0 | 1 shop | 1 |
+| Dasar | Rp29.000 | Rp290.000 | 1 shop | 1 |
+| Tumbuh | Rp79.000 | Rp790.000 | 1 shop | 1 |
+| Business | Rp349.000 | Rp3.490.000 | 2 shops | 3 |
+| Enterprise | Rp1.499.000 | Rp14.990.000 | 5 branches | 10 |
 
-The annual draft equals ten monthly payments and is an upfront total. Proposed Business/Enterprise add-ons are Rp10.000/month per admin/operator, Rp25.000/month per operational device, Rp99.000/month per outlet bundle (two devices and five admin/operator accounts), and Rp50.000/month per 25 active employees with self-service access.
+The annual draft equals ten monthly payments and is an upfront total. No add-on rates are published; special requirements should be discussed with an admin rather than shown as fixed prices.
 
-Product-menu assignment, per-plan product/supplier capacities, cloud attachment quotas, employee self-service permissions, offline license refresh/grace behavior, backup and retention terms, pricing tax treatment, support boundaries, and cloud-load limits remain to be validated. The static registration link does not select a plan or accept payment. Do not claim these as released subscription capabilities.
+Product-menu assignment, account and employee limits, product/supplier capacities, cloud storage quotas, employee self-service permissions, offline license refresh/grace behavior, backup and retention terms, tax treatment, support boundaries, and cloud-load limits remain to be validated. The static registration link does not select a plan or accept payment. Do not claim these as released subscription capabilities.
 
 ## Competitor pricing snapshot reviewed for planning
 
@@ -65,7 +65,7 @@ Organization creation, plan selection, billing, trials, upgrade/downgrade, downl
 - Keep the existing editorial design: paper-gray surfaces, large black typography, blue accents, dark contrast areas, thin rules, restrained motion, and product screenshots.
 - Make the value proposition and local-vs-cloud distinction immediately understandable.
 - Use Indonesian for navigation, package descriptions, platform status, and the primary user explanation; retain familiar product terms where useful.
-- Show monthly and annual plan totals, package limits, employee access versus operational devices, and draft status clearly.
+- Show draft monthly/annual prices, shop/device counts, and the local-versus-online difference in plain language; do not expose unverified account/employee caps or fixed add-on prices.
 - Keep disabled platform controls genuinely disabled until release assets/listing destinations exist.
 
 ## Information not verified

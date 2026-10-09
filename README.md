@@ -30,24 +30,22 @@ sitemap.xml
 4. Product screenshots
 5. Growth path from local single-outlet use to connected operations
 6. Platform availability: Web, Windows, Linux, Android; macOS/iOS roadmap
-7. Draft packages, billing-period switch, feature comparison, and add-on proposal
+7. Draft package cards, billing-period switch, and admin contact for special requirements
 8. Product credibility and FAQ
 
 ## Subscription plan — planning draft only
 
 These values were supplied during product planning. They are displayed with a clear draft disclaimer and are not an active offer or billing configuration.
 
-| Package | Monthly draft | Annual draft | Outlets | Operational devices | Admin/operator accounts | Active employees |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Gratis | Rp0 | Rp0 | 1 | 1 | 1 | — |
-| Dasar | Rp29.000 | Rp290.000 | 1 | 1 | 3 | — |
-| Tumbuh | Rp79.000 | Rp790.000 | 1 | 1 | 10 | 30 |
-| Business | Rp349.000 | Rp3.490.000 | 2 | 3 | 10 | 50 |
-| Enterprise | Rp1.499.000 | Rp14.990.000 | 5 | 10 | 30 | 150 |
+| Package | Monthly draft | Annual draft | Shops/branches | Cashier/admin devices |
+| --- | ---: | ---: | ---: | ---: |
+| Gratis | Rp0 | Rp0 | 1 shop | 1 |
+| Dasar | Rp29.000 | Rp290.000 | 1 shop | 1 |
+| Tumbuh | Rp79.000 | Rp790.000 | 1 shop | 1 |
+| Business | Rp349.000 | Rp3.490.000 | 2 shops | 3 |
+| Enterprise | Rp1.499.000 | Rp14.990.000 | 5 branches | 10 |
 
-Annual draft amounts equal ten monthly payments and are shown as an upfront total. Add-on monthly draft amounts: one admin/operator account Rp10.000; one operational device Rp25.000; one outlet including two devices and five admin/operator accounts Rp99.000; 25 active employees with self-service access Rp50.000.
-
-Package menus, technical quotas (products, suppliers, cloud attachments), offline licensing, employee self-service, and cloud capacity still require product/backend validation. Keep this disclaimer until the offer is approved and implemented end to end. Do not represent the registration CTA as plan selection or payment.
+Annual draft amounts equal ten monthly payments and are shown as an upfront total. Prices and package contents remain drafts. Account/employee caps, technical quotas, and add-on prices are not displayed while product and service capacity is still being validated. Special requirements should be discussed with an admin rather than presented as fixed add-on prices.
 
 ## Platform availability
 
@@ -68,7 +66,7 @@ Package menus, technical quotas (products, suppliers, cloud attachments), offlin
 - Preserve the editorial identity: paper surfaces, large black typography, blue accents/glows, dark contrast sections, fine rules, and restrained motion.
 - Existing CSS variables remain the token source.
 - User-owned Arian System product screenshots are reused; optimized WebP derivatives remain the display assets.
-- The pricing period switch is dependency-free and updates card prices accessibly.
+- The pricing period switch is dependency-free and updates card prices accessibly; detailed quota tables and add-on prices are omitted from the page.
 - Navigation, FAQ, tabs, and reduced-motion behavior are dependency-free.
 
 ## Validation expectations
