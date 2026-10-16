@@ -86,4 +86,4 @@ Annual draft amounts equal ten monthly payments and are shown as an upfront tota
 - Draft prices and feature/limit matrices must not be described as active subscriptions until backend entitlements, billing, support terms, tax treatment, and capacity are verified.
 - Do not invent customer logos, testimonials, customer counts, revenue or performance claims, certifications, integrations, payment methods, uptime, or SLA.
 - No dates are promised for Windows/Linux/Android release or macOS/iOS availability.
-- `CNAME` currently names `arianstars.web.id`, while the marketing canonical points to the supplied GitHub Pages URL. Review hosting/domain architecture before changing either.
+- The landing page is served from the GitHub Pages URL (`https://ariansyahmaulanaa.github.io/Arian-System/`); `arianstars.web.id` belongs to a separate site and must not be claimed by this repository via a CNAME file.
