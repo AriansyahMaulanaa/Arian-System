@@ -1,22 +1,13 @@
 (() => {
   'use strict';
 
-  const root = document.documentElement;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const finePointer = window.matchMedia('(pointer: fine)').matches;
-
-  requestAnimationFrame(() => root.classList.add('is-loaded'));
 
   const header = document.querySelector('[data-header]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
   const main = document.querySelector('main');
   const footer = document.querySelector('footer');
-  const intro = document.querySelector('.intro');
-  const heroTitle = document.querySelector('.hero-title-wrap');
-  const heroSlogan = document.querySelector('.hero-slogan');
-  const heroRadialLeft = document.querySelector('.hero-radial--left');
-  const heroRadialRight = document.querySelector('.hero-radial--right');
   let scrollFrame = 0;
   let previousScrollY = window.scrollY;
   let lastDirection = 'up';
@@ -58,15 +49,6 @@
       header.classList.toggle('is-scrolled', currentScrollY > 18);
       header.classList.toggle('is-hidden', currentScrollY > 120 && lastDirection === 'down');
     }
-
-    if (!reducedMotion && finePointer && intro && intro.getBoundingClientRect().bottom > 0) {
-      const progress = Math.min(1, Math.max(0, currentScrollY / Math.max(window.innerHeight, 1)));
-      if (heroTitle && progress > 0) heroTitle.style.transform = `translate3d(0, ${progress * 30}px, 0)`;
-      if (heroSlogan) heroSlogan.style.translate = `0 ${progress * 14}px`;
-      if (heroRadialLeft) heroRadialLeft.style.translate = `${progress * 30}px ${progress * -18}px`;
-      if (heroRadialRight) heroRadialRight.style.translate = `${progress * -24}px ${progress * 20}px`;
-    }
-
   };
 
   setMenu(false);
@@ -111,7 +93,7 @@
   }, { passive: true });
 
   const revealItems = [...document.querySelectorAll('[data-reveal]')];
-  const staggerGroups = ['.value-grid', '.control-grid', '.project-grid', '.pricing-grid', '.credibility-list'];
+  const staggerGroups = ['.value-grid', '.control-grid', '.project-grid', '.plan-grid', '.growth-strip'];
   staggerGroups.forEach((selector) => {
     document.querySelectorAll(`${selector} > [data-reveal]`).forEach((item, index) => {
       item.style.setProperty('--reveal-delay', `${Math.min(index, 3) * 75}ms`);

@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#171717">
-  <meta name="description" content="Arian System membantu usaha mengelola kasir, stok, karyawan, dan keuangan dalam satu sistem. Pilih penggunaan lokal atau cloud sesuai kebutuhan.">
+  <meta name="description" content="Arian System membantu perusahaan mengelola pembelian, persediaan, keuangan, dan tim dalam satu sistem. Pilih penggunaan lokal atau cloud sesuai kebutuhan.">
   <meta name="robots" content="index,follow,max-image-preview:large">
-  <title>Arian System — Platform Operasional untuk UMKM &amp; Retail</title>
+  <title>Arian System — Sistem Operasional Perusahaan</title>
   <link rel="canonical" href="https://ariansyahmaulanaa.github.io/Arian-System/">
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Roboto+Mono:wght@500;600;700&amp;display=swap">
@@ -17,13 +18,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Arian System">
   <meta property="og:title" content="Arian System — Operasional, lebih terhubung.">
-  <meta property="og:description" content="Kelola kasir, stok, karyawan, dan keuangan dalam satu sistem. Pilih penggunaan lokal atau cloud sesuai kebutuhan.">
+  <meta property="og:description" content="Kelola pembelian, persediaan, keuangan, dan tim dalam satu sistem. Pilih penggunaan lokal atau cloud sesuai kebutuhan.">
   <meta property="og:url" content="https://ariansyahmaulanaa.github.io/Arian-System/">
   <meta property="og:image" content="https://ariansyahmaulanaa.github.io/Arian-System/assets/images/Screenshot%202026-08-23%20131430.png">
   <meta property="og:image:alt" content="Dashboard OMS Arian System">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Arian System — Operasional, lebih terhubung.">
-  <meta name="twitter:description" content="Kelola kasir, stok, karyawan, dan keuangan dalam satu sistem untuk usaha Anda.">
+  <meta name="twitter:description" content="Kelola pembelian, persediaan, keuangan, dan tim dalam satu sistem untuk perusahaan Anda.">
   <meta name="twitter:image" content="https://ariansyahmaulanaa.github.io/Arian-System/assets/images/Screenshot%202026-08-23%20131430.png">
   <script type="application/ld+json">
   {
@@ -32,161 +33,363 @@
     "name": "Arian System",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Rancangan platform operasional untuk usaha yang menghubungkan penjualan, stok, tim, dan keuangan.",
+    "description": "Rancangan platform operasional untuk perusahaan yang menghubungkan pembelian, persediaan, tim, dan keuangan.",
     "url": "https://ariansyahmaulanaa.github.io/Arian-System/"
   }
   </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
-  <header class="site-nav site-nav--hero" data-header>
+  <header class="site-nav" data-header>
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Arian System, kembali ke atas"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>ARIAN</span></a>
       <nav class="nav-links" aria-label="Navigasi utama">
-        <a href="#product" data-label="Fitur"><span>Fitur</span><sup>01</sup></a>
-        <a href="#pos-oms" data-label="POS + Operasional"><span>POS + Operasional</span><sup>02</sup></a>
-        <a href="#downloads" data-label="Platform"><span>Platform</span><sup>03</sup></a>
-        <a href="#pricing" data-label="Paket &amp; Harga"><span>Paket &amp; Harga</span><sup>04</sup></a>
-        <a href="#faq" data-label="FAQ"><span>FAQ</span><sup>05</sup></a>
+        <a href="#produk"><span>Fitur</span></a>
+        <a href="#kelola"><span>Pengelolaan</span></a>
+        <a href="#platform"><span>Platform</span></a>
+        <a href="#harga"><span>Paket &amp; Harga</span></a>
+        <a href="#faq"><span>FAQ</span></a>
       </nav>
-      <div class="nav-actions"><a class="nav-login" href="https://arianstars.web.id/login">Masuk</a><a class="nav-cta rolling-link" href="https://arianstars.web.id/register"><span>Daftar Akun</span><span aria-hidden="true">Daftar Akun</span></a></div>
+      <div class="nav-actions"><a class="nav-login" href="https://arianstars.web.id/login">Masuk</a><a class="nav-cta" href="https://arianstars.web.id/register"><span>Daftar Akun</span><span aria-hidden="true">↗</span></a></div>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle><span class="sr-only">Buka menu</span><i></i><i></i></button>
     </div>
     <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
       <nav aria-label="Navigasi mobile">
-        <a href="#product" data-mobile-link><sup>01</sup>Fitur</a><a href="#pos-oms" data-mobile-link><sup>02</sup>POS + Operasional</a><a href="#downloads" data-mobile-link><sup>03</sup>Platform</a><a href="#pricing" data-mobile-link><sup>04</sup>Paket &amp; Harga</a><a href="#faq" data-mobile-link><sup>05</sup>FAQ</a>
+        <a href="#produk" data-mobile-link>Fitur</a>
+        <a href="#kelola" data-mobile-link>Pengelolaan</a>
+        <a href="#platform" data-mobile-link>Platform</a>
+        <a href="#harga" data-mobile-link>Paket &amp; Harga</a>
+        <a href="#faq" data-mobile-link>FAQ</a>
       </nav>
       <div class="mobile-actions"><a href="https://arianstars.web.id/login">Masuk</a><a class="mobile-primary" href="https://arianstars.web.id/register">Daftar Arian System <span aria-hidden="true">↗</span></a></div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="intro" id="top" aria-labelledby="hero-title">
-      <div class="hero-radial hero-radial--left" aria-hidden="true"></div><div class="hero-radial hero-radial--right" aria-hidden="true"></div><div class="hero-radial hero-radial--top" aria-hidden="true"></div><div class="hero-radial hero-radial--bottom" aria-hidden="true"></div>
-      <div class="page-container intro-container">
-        <div class="intro-top">
-          <div class="intro-info hero-enter hero-enter--1"><span>SISTEM OPERASIONAL UNTUK USAHA</span><span>WARUNG · TOKO · MULTI-OUTLET</span></div>
-          <h1 class="hero-title-wrap hero-enter hero-enter--2" id="hero-title"><span class="hero-product">ARIAN SYSTEM</span><span class="hero-value">OPERASIONAL LEBIH RAPI.</span></h1>
-          <div class="hero-slogan hero-enter hero-enter--3"><p>Kelola penjualan, stok, karyawan, dan keuangan dalam satu sistem. Pilih penggunaan lokal atau cloud sesuai kebutuhan usaha.</p><span class="hero-audience">DARI USAHA LOKAL<br>HINGGA BEBERAPA OUTLET</span></div>
-          <div class="hero-actions hero-enter hero-enter--4"><a class="button button--primary" href="#pricing">Lihat Paket <span aria-hidden="true">↓</span></a><a class="button button--secondary" href="#downloads">Pilih Platform <span aria-hidden="true">↓</span></a></div>
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="page-container">
+        <div class="hero-lead">
+          <h1 id="hero-title">Operasional lebih rapi, dalam satu sistem.</h1>
+          <p class="hero-sub">Kelola pembelian, persediaan, keuangan, dan tim di satu tempat. Pilih penggunaan lokal dengan data di perangkat, atau online dengan data tersinkron antar lokasi.</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a>
+            <a class="button button--secondary" href="#harga">Lihat paket &amp; harga <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-meta">Untuk perusahaan dengan satu atau beberapa lokasi · Mulai dari Gratis</p>
         </div>
-        <div class="intro-bottom hero-enter hero-enter--4">
-          <p class="intro-note">SATU SISTEM UNTUK TRANSAKSI,<br>OPERASIONAL, DAN KONTROL.</p>
-          <div class="capability-list"><span><i>01</i>Kasir dan penjualan</span><span><i>02</i>Stok dan pembelian</span><span><i>03</i>Karyawan dan penggajian</span><span><i>04</i>Keuangan dan persetujuan</span></div>
-          <div class="module-marks" aria-hidden="true"><span>POS</span><span>OMS</span><span>STOCK</span><span>PEOPLE</span><span>FINANCE</span><span>CONTROL</span></div>
+        <div class="hero-visual">
+          <figure class="hero-stage">
+            <img src="assets/images/oms-dashboard.webp" width="1919" height="948" fetchpriority="high" decoding="async" alt="Dashboard OMS Arian System dengan ringkasan presensi, karyawan, dan izin pending">
+            <figcaption>Dashboard OMS — ringkasan operasional harian.</figcaption>
+          </figure>
+          <ul class="hero-chips">
+            <li class="chip chip--ok"><i aria-hidden="true"></i>Presensi hari ini tercatat</li>
+            <li class="chip chip--info"><i aria-hidden="true"></i>21 karyawan aktif</li>
+            <li class="chip chip--warn"><i aria-hidden="true"></i>1 izin menunggu persetujuan</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>TRANSACTIONS</span><b>✳</b><span>INVENTORY</span><b>✳</b><span>PEOPLE</span><b>✳</b><span>FINANCE</span><b>✳</b><span>CONTROL</span><b>✳</b><span>TRANSACTIONS</span><b>✳</b><span>INVENTORY</span><b>✳</b><span>PEOPLE</span><b>✳</b><span>FINANCE</span><b>✳</b><span>CONTROL</span><b>✳</b></div></div>
-
-    <section class="about section-pad" id="about" aria-labelledby="about-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[01]</i>TENTANG SISTEM</span><p>PEKERJAAN TERHUBUNG.<br>PENCATATAN JUGA TERPADU.</p></header>
-      <div class="about-heading" data-reveal><h2 class="display-title" id="about-title">KELOLA OPERASIONAL<br>DALAM SATU SISTEM.</h2><p>Saat transaksi, stok, pembelian, tim, penggajian, dan keuangan dicatat di tempat berbeda, gambaran usaha mudah terputus. Arian System menyatukan alur tersebut agar lebih mudah dipantau dan ditinjau.</p></div>
-      <div class="value-grid" data-reveal><article><span>01 / CONNECT</span><h3>Catatan tidak tercecer.</h3><p>Transaksi, pergerakan stok, pengajuan, dan pekerjaan operasional berada dalam sistem yang sama.</p></article><article><span>02 / SEE</span><h3>Tahu apa yang perlu dicek.</h3><p>Stok menipis, kegiatan tertunda, persetujuan, dan laporan terlihat tanpa harus mencarinya satu per satu.</p></article><article><span>03 / CONTROL</span><h3>Setiap orang punya batas akses.</h3><p>Peran, izin akses, persetujuan, PIN, dan catatan aktivitas membantu tindakan penting tetap dapat ditinjau.</p></article></div>
-    </div></section>
-
-    <section class="mode-section section-pad" id="pos-oms" aria-labelledby="mode-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[02]</i>POS + OPERASIONAL</span><p>DUA AREA KERJA.<br>SATU SISTEM USAHA.</p></header>
-      <div class="mode-heading" data-reveal><h2 id="mode-title">POS UNTUK TRANSAKSI.<br>OMS UNTUK MENGELOLA OPERASIONAL.</h2><p>Kasir memakai POS untuk mencatat transaksi dan shift. Pengelola memakai OMS untuk mengurus stok, pembelian, karyawan, penggajian, keuangan, dan persetujuan.</p></div>
-      <div class="mode-grid" data-reveal><article class="mode-panel mode-panel--pos"><header><span>01 / TRANSAKSI</span><strong>POS</strong></header><h3>Tempat penjualan dicatat.</h3><ul><li>Kasir</li><li>Shift</li><li>Transaksi</li><li>Pembayaran</li><li>Laporan penjualan</li></ul></article><div class="mode-bridge" aria-hidden="true"><span>KEGIATAN</span><i>→</i><span>INFORMASI</span></div><article class="mode-panel mode-panel--oms"><header><span>02 / OPERASIONAL</span><strong>OMS</strong></header><h3>Tempat pekerjaan dikelola.</h3><ul><li>Persediaan</li><li>Pembelian</li><li>Karyawan</li><li>Penggajian</li><li>Keuangan</li><li>Persetujuan</li><li>Audit</li></ul></article></div>
-    </div></section>
-
-    <section class="workflow section-pad" id="workflow" aria-labelledby="workflow-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[03]</i>ALUR KERJA</span><p>DARI KEGIATAN HARIAN<br>HINGGA KEPUTUSAN.</p></header>
-      <div class="workflow-heading" data-reveal><h2 id="workflow-title">ALUR KERJA DARI TRANSAKSI HINGGA PENINJAUAN.</h2><p>Pekerjaan harian tidak berhenti sebagai catatan. Tim bisa melihat sinyal penting, mengambil keputusan, lalu menelusuri apa yang sudah terjadi.</p></div>
-      <ol class="workflow-list" data-reveal><li><span>01</span><strong>Catat</strong><p>Penjualan dan shift terjadi di outlet.</p></li><li><span>02</span><strong>Perbarui</strong><p>Stok dan status operasional ikut bergerak.</p></li><li><span>03</span><strong>Pantau</strong><p>Dashboard dan laporan menampilkan hal penting.</p></li><li><span>04</span><strong>Setujui</strong><p>Aktivitas penting diperiksa oleh orang yang tepat.</p></li><li><span>05</span><strong>Tinjau</strong><p>Keputusan dan perubahan dapat ditelusuri.</p></li></ol>
-    </div></section>
-
-    <section class="control-section section-pad" id="control" aria-labelledby="control-title"><div class="page-container">
-      <header class="section-rail section-rail--light" data-reveal><span class="rail-tag rail-tag--light"><i>[04]</i>KONTROL DI DALAM ALUR</span><p>AKSES DAN PERSETUJUAN<br>SESUAI TANGGUNG JAWAB.</p></header>
-      <div class="control-hero" data-reveal><h2 id="control-title">KONTROL DALAM ALUR KERJA HARIAN.</h2><p>Izin akses menentukan siapa yang dapat bertindak. Persetujuan menentukan siapa yang memeriksa. Catatan audit membantu menelusuri perubahan.</p></div>
-      <div class="control-grid"><article data-reveal><span>01</span><h3>Peran dan akses</h3><p>Setiap pengguna mendapat akses sesuai pekerjaan dan tanggung jawabnya.</p></article><article data-reveal><span>02</span><h3>Persetujuan dan PIN</h3><p>Tindakan penting dapat diperiksa lebih dulu sebelum diselesaikan.</p></article><article data-reveal><span>03</span><h3>Akses per outlet</h3><p>Akses dapat dibatasi berdasarkan outlet dan kebutuhan tiap peran.</p></article><article data-reveal><span>04</span><h3>Catatan audit</h3><p>Perubahan dan keputusan sensitif dapat ditinjau kembali.</p></article></div>
-    </div></section>
-
-    <section class="projects section-pad" id="product" aria-labelledby="projects-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[05]</i>TAMPILAN PRODUK</span><p>GAMBARAN PEKERJAAN<br>OPERASIONAL SEHARI-HARI.</p></header>
-      <div class="projects-heading" data-reveal><h2 id="projects-title">BEBERAPA TAMPILAN<br>DARI ARIAN SYSTEM.</h2><p>Bagian ini menampilkan beberapa screenshot Arian System untuk kebutuhan operasional yang berbeda.</p></div>
-      <div class="project-grid">
-        <article class="project-card project-card--wide" data-reveal><div class="project-media project-media--blue"><div class="product-shot product-shot--oms"><div class="product-shot-bar"><span>ARIAN SYSTEM · OMS</span><b>01</b></div><img src="assets/images/oms-dashboard.webp" width="1919" height="948" loading="lazy" decoding="async" alt="Dashboard OMS Arian System dengan ringkasan presensi, karyawan, dan izin pending"></div></div><footer class="project-meta"><div><span>OMS · ATTENTION</span><h3>Lihat apa yang perlu diperiksa hari ini.</h3><p>Presensi, kondisi tim, dan izin pending berkumpul dalam satu ringkasan.</p></div><b>(01)</b></footer></article>
-        <article class="project-card project-card--narrow" data-reveal><div class="project-media project-media--dark"><div class="product-shot product-shot--pos"><div class="product-shot-bar"><span>ARIAN SYSTEM · POS</span><b>02</b></div><img src="assets/images/pos-inventory.webp" width="1919" height="948" loading="lazy" decoding="async" alt="Halaman stok POS Arian System dengan daftar produk dan peringatan stok menipis"></div></div><footer class="project-meta"><div><span>POS · INVENTORY</span><h3>Cek stok sebelum penjualan terganggu.</h3><p>Status produk dan jumlah stok dapat dilihat langsung dari POS.</p></div><b>(02)</b></footer></article>
-        <article class="project-card project-card--narrow" data-reveal><div class="project-media project-media--paper"><div class="product-shot product-shot--finance"><div class="product-shot-bar"><span>ARIAN SYSTEM · FINANCE</span><b>03</b></div><img src="assets/images/finance-dashboard.webp" width="1919" height="947" loading="lazy" decoding="async" alt="Finance Dashboard Arian System dengan saldo kas, arus kas, piutang, dan hutang supplier"></div></div><footer class="project-meta"><div><span>FINANCE · OVERVIEW</span><h3>Ringkasan keuangan dalam satu tampilan.</h3><p>Saldo, arus kas, piutang, dan hutang supplier terlihat dalam satu dashboard.</p></div><b>(03)</b></footer></article>
-        <article class="project-card project-card--wide" data-reveal><div class="project-media project-media--warm"><div class="product-shot product-shot--leave"><div class="product-shot-bar"><span>ARIAN SYSTEM · HR</span><b>04</b></div><img src="assets/images/leave-approval.webp" width="1919" height="947" loading="lazy" decoding="async" alt="Halaman izin dan cuti Arian System dengan daftar pengajuan dan status persetujuan"></div></div><footer class="project-meta"><div><span>PEOPLE · APPROVAL</span><h3>Periksa pengajuan dengan status yang jelas.</h3><p>Izin dan cuti menyimpan konteks, status, serta tindakan yang tersedia.</p></div><b>(04)</b></footer></article>
-        <article class="project-card project-card--wide" data-reveal><div class="project-media project-media--lime"><div class="product-shot product-shot--payroll"><div class="product-shot-bar"><span>ARIAN SYSTEM · PAYROLL</span><b>05</b></div><img src="assets/images/payroll-period.webp" width="1919" height="948" loading="lazy" decoding="async" alt="Halaman periode penggajian Arian System dengan status payroll dan masalah yang perlu ditinjau"></div></div><footer class="project-meta"><div><span>PAYROLL · REVIEW</span><h3>Tinjau payroll sebelum periode diselesaikan.</h3><p>Gross, deduction, net, dan status review terlihat untuk setiap periode.</p></div><b>(05)</b></footer></article>
-        <article class="project-card project-card--narrow" data-reveal><div class="project-media project-media--red"><div class="product-shot product-shot--employees"><div class="product-shot-bar"><span>ARIAN SYSTEM · PEOPLE</span><b>06</b></div><img src="assets/images/employee-directory.webp" width="1919" height="945" loading="lazy" decoding="async" alt="Daftar karyawan Arian System dengan unit, jabatan, dan status aktif"></div></div><footer class="project-meta"><div><span>PEOPLE · ACCESS</span><h3>Temukan data tim dari satu direktori.</h3><p>Identitas, unit, jabatan, status, dan akses dapat diperiksa bersama.</p></div><b>(06)</b></footer></article>
+    <section class="section section--white" id="produk" aria-labelledby="produk-title">
+      <div class="page-container">
+        <header class="section-head" data-reveal>
+          <div><h2 id="produk-title">Tampilan yang dipakai setiap hari.</h2></div>
+          <p>Enam layar dari modul Arian System: ringkasan operasional, stok, keuangan, izin, penggajian, dan data tim.</p>
+        </header>
+        <div class="project-grid">
+          <figure class="project" data-reveal>
+            <img src="assets/images/oms-dashboard.webp" width="1919" height="948" loading="lazy" decoding="async" alt="Dashboard OMS Arian System dengan ringkasan presensi, karyawan, dan izin pending">
+            <figcaption><span class="project-label">OMS · Ringkasan</span><h3>Lihat apa yang perlu diperiksa hari ini.</h3><p>Presensi, kondisi tim, dan izin pending berkumpul dalam satu ringkasan.</p></figcaption>
+          </figure>
+          <figure class="project" data-reveal>
+            <img src="assets/images/pos-inventory.webp" width="1919" height="948" loading="lazy" decoding="async" alt="Halaman stok Arian System dengan daftar produk dan peringatan stok menipis">
+            <figcaption><span class="project-label">Persediaan · Stok</span><h3>Cek stok sebelum pekerjaan terganggu.</h3><p>Status produk dan jumlah stok dapat dilihat langsung dari sistem.</p></figcaption>
+          </figure>
+          <figure class="project" data-reveal>
+            <img src="assets/images/finance-dashboard.webp" width="1919" height="947" loading="lazy" decoding="async" alt="Finance Dashboard Arian System dengan saldo kas, arus kas, piutang, dan hutang supplier">
+            <figcaption><span class="project-label">Keuangan · Ringkasan</span><h3>Ringkasan keuangan dalam satu tampilan.</h3><p>Saldo, arus kas, piutang, dan hutang supplier terlihat dalam satu dashboard.</p></figcaption>
+          </figure>
+          <figure class="project" data-reveal>
+            <img src="assets/images/leave-approval.webp" width="1919" height="947" loading="lazy" decoding="async" alt="Halaman izin dan cuti Arian System dengan daftar pengajuan dan status persetujuan">
+            <figcaption><span class="project-label">Tim · Persetujuan</span><h3>Periksa pengajuan dengan status yang jelas.</h3><p>Izin dan cuti menyimpan konteks, status, serta tindakan yang tersedia.</p></figcaption>
+          </figure>
+          <figure class="project" data-reveal>
+            <img src="assets/images/payroll-period.webp" width="1919" height="948" loading="lazy" decoding="async" alt="Halaman periode penggajian Arian System dengan status payroll dan masalah yang perlu ditinjau">
+            <figcaption><span class="project-label">Penggajian · Tinjau</span><h3>Tinjau payroll sebelum periode diselesaikan.</h3><p>Gross, deduction, net, dan status review terlihat untuk setiap periode.</p></figcaption>
+          </figure>
+          <figure class="project" data-reveal>
+            <img src="assets/images/employee-directory.webp" width="1919" height="945" loading="lazy" decoding="async" alt="Daftar karyawan Arian System dengan unit, jabatan, dan status aktif">
+            <figcaption><span class="project-label">Tim · Akses</span><h3>Temukan data tim dari satu direktori.</h3><p>Identitas, unit, jabatan, status, dan akses dapat diperiksa bersama.</p></figcaption>
+          </figure>
+        </div>
       </div>
-    </div></section>
+    </section>
 
-    <section class="audience section-pad" id="audience" aria-labelledby="audience-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[06]</i>UNTUK SIAPA</span><p>MENDUKUNG USAHA<br>SEIRING PERKEMBANGANNYA.</p></header>
-      <div class="audience-heading" data-reveal><h2 class="display-title" id="audience-title">DARI SATU OUTLET<br>KE KONTROL TERPUSAT.</h2><p>Mulai dari kebutuhan satu outlet. Saat bisnis bertambah besar, Anda bisa menambah kapasitas tanpa membayar kebutuhan multi-outlet terlalu cepat.</p></div>
-      <div class="growth-path" data-reveal><article><span>LOKAL</span><strong>01</strong><h3>Satu outlet</h3><p>Mulai dengan penjualan, stok, shift, dan data tim di perangkat.</p></article><i aria-hidden="true">→</i><article><span>TERHUBUNG</span><strong>02</strong><h3>Beberapa outlet</h3><p>Hubungkan outlet, presensi karyawan, dan laporan melalui cloud.</p></article><i aria-hidden="true">→</i><article><span>TERPUSAT</span><strong>05</strong><h3>Operasional lebih luas</h3><p>Kelola akses, persetujuan, dan laporan lintas outlet.</p></article></div>
-    </div></section>
-
-    <section class="process section-pad" id="process" aria-labelledby="process-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[07]</i>CARA PENGGUNAAN</span><p>DARI PERSIAPAN<br>HINGGA PENINJAUAN.</p></header>
-      <div class="process-heading" data-reveal><h2 id="process-title">SIAPKAN. JALANKAN.<br>PANTAU. KENDALIKAN.</h2><p>Susun data usaha lebih dulu. Setelah itu, pekerjaan harian, pemantauan, dan keputusan mengikuti alur yang sama.</p></div>
-      <div class="process-system" data-reveal><div class="process-tabs" role="tablist" aria-label="Tahapan penggunaan Arian System"><button class="is-active" id="process-tab-1" type="button" role="tab" aria-selected="true" aria-controls="process-panel-1" data-process-tab="0"><span>01</span>Persiapan</button><button id="process-tab-2" type="button" role="tab" aria-selected="false" aria-controls="process-panel-2" data-process-tab="1" tabindex="-1"><span>02</span>Jalankan</button><button id="process-tab-3" type="button" role="tab" aria-selected="false" aria-controls="process-panel-3" data-process-tab="2" tabindex="-1"><span>03</span>Pantau</button><button id="process-tab-4" type="button" role="tab" aria-selected="false" aria-controls="process-panel-4" data-process-tab="3" tabindex="-1"><span>04</span>Kendalikan</button></div><div class="process-panels">
-        <div class="process-panel is-active" id="process-panel-1" role="tabpanel" aria-labelledby="process-tab-1" data-process-panel="0"><div><span>LANGKAH 01 · PERSIAPAN</span><h3>Siapkan outlet, peran, dan data utama.</h3><p>Masukkan data outlet, karyawan, produk, shift, dan hak akses yang akan dipakai tim.</p></div><div class="process-art process-art--setup"><span>OUTLET</span><i>→</i><span>ROLE</span><i>→</i><span>DATA</span></div></div>
-        <div class="process-panel" id="process-panel-2" role="tabpanel" aria-labelledby="process-tab-2" data-process-panel="1" hidden><div><span>LANGKAH 02 · PEKERJAAN HARIAN</span><h3>Jalankan operasional dari satu sistem.</h3><p>Tim melakukan presensi, kasir membuka shift, transaksi dicatat, stok bergerak, dan pengajuan masuk.</p></div><div class="process-art process-art--operate"><ol class="operation-flow"><li><small>01</small><strong>Presensi</strong></li><li><small>02</small><strong>Shift</strong></li><li><small>03</small><strong>Transaksi</strong></li><li><small>04</small><strong>Stok</strong></li><li><small>05</small><strong>Pengajuan</strong></li></ol></div></div>
-        <div class="process-panel" id="process-panel-3" role="tabpanel" aria-labelledby="process-tab-3" data-process-panel="2" hidden><div><span>LANGKAH 03 · PEMANTAUAN</span><h3>Lihat apa yang perlu diperhatikan.</h3><p>Ringkasan, peringatan stok, transaksi tertunda, laporan, notifikasi, dan persetujuan membantu tim menentukan prioritas.</p></div><div class="process-art process-art--monitor"><b>04</b><span>HAL YANG PERLU<br>DIPERIKSA</span></div></div>
-        <div class="process-panel" id="process-panel-4" role="tabpanel" aria-labelledby="process-tab-4" data-process-panel="3" hidden><div><span>LANGKAH 04 · KEPUTUSAN</span><h3>Putuskan dengan konteks dan catatan.</h3><p>Keputusan penting memiliki status dan pihak yang menyetujui, serta dapat ditelusuri kembali.</p></div><div class="process-art process-art--control"><span>PENGAJUAN</span><i></i><span>SETUJU</span><i></i><b>CATATAN</b></div></div>
-      </div></div>
-    </div></section>
-
-    <section class="platforms section-pad" id="downloads" aria-labelledby="platforms-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[08]</i>PILIH PLATFORM</span><p>GUNAKAN DI PERANGKAT<br>YANG SESUAI DENGAN USAHA.</p></header>
-      <div class="platforms-heading" data-reveal><h2 id="platforms-title">SATU SISTEM.<br>PILIH CARA AKSESNYA.</h2><p>Versi web dapat dibuka melalui browser. Aplikasi Windows, Linux, dan Android sedang disiapkan. Tombol unduh dan Google Play akan diaktifkan setelah rilis resmi.</p></div>
-      <div class="platform-grid">
-        <article class="platform-card platform-card--web" data-reveal><div class="platform-card-top"><span class="platform-mark">WEB</span><span class="platform-status platform-status--ready">Akses melalui browser</span></div><h3>Web</h3><p>Buka Arian System melalui browser pada perangkat yang didukung.</p><a class="platform-action" href="https://arianstars.web.id/login">Buka halaman masuk <span aria-hidden="true">↗</span></a></article>
-        <article class="platform-card" data-reveal><div class="platform-card-top"><span class="platform-mark">WIN</span><span class="platform-status">Sedang disiapkan</span></div><h3>Windows</h3><p>Aplikasi desktop untuk penggunaan di komputer kasir atau kantor.</p><button class="platform-action platform-action--disabled" type="button" disabled>Unduhan segera tersedia</button></article>
-        <article class="platform-card" data-reveal><div class="platform-card-top"><span class="platform-mark">LIN</span><span class="platform-status">Sedang disiapkan</span></div><h3>Linux</h3><p>Aplikasi desktop Linux dengan tombol unduh setelah rilis resmi.</p><button class="platform-action platform-action--disabled" type="button" disabled>Unduhan segera tersedia</button></article>
-        <article class="platform-card" data-reveal><div class="platform-card-top"><span class="platform-mark">AND</span><span class="platform-status">Disiapkan untuk Google Play</span></div><h3>Android</h3><p>Aplikasi Android akan diarahkan ke Google Play setelah tersedia.</p><button class="platform-action platform-action--disabled" type="button" disabled>Segera tersedia di Google Play</button></article>
+    <section class="section" id="kelola" aria-labelledby="kelola-title">
+      <div class="page-container">
+        <header class="section-head" data-reveal>
+          <div><h2 id="kelola-title">Kelola operasional dalam satu sistem.</h2></div>
+          <p>Saat transaksi, stok, pembelian, tim, penggajian, dan keuangan dicatat di tempat berbeda, gambaran perusahaan mudah terputus. Arian System menyatukan alurnya agar lebih mudah dipantau dan ditinjau.</p>
+        </header>
+        <div class="value-grid">
+          <article data-reveal><h3>Catatan tidak tercecer.</h3><p>Transaksi, perubahan stok, pengajuan, dan pekerjaan operasional berada dalam sistem yang sama.</p></article>
+          <article data-reveal><h3>Tahu apa yang perlu dicek.</h3><p>Stok menipis, kegiatan tertunda, persetujuan, dan laporan terlihat tanpa harus dicari satu per satu.</p></article>
+          <article data-reveal><h3>Setiap orang punya batas akses.</h3><p>Peran, izin, persetujuan, PIN, dan catatan aktivitas membantu tindakan penting tetap dapat ditinjau.</p></article>
+        </div>
+        <div class="mode-grid" data-reveal>
+          <article class="mode-panel">
+            <header><strong>OMS</strong><p>Tempat pekerjaan perusahaan dikelola.</p></header>
+            <ol class="mode-list mode-list--grid">
+              <li>Persediaan</li>
+              <li>Pembelian</li>
+              <li>Karyawan</li>
+              <li>Penggajian</li>
+              <li>Keuangan</li>
+              <li>Persetujuan</li>
+              <li>Audit</li>
+            </ol>
+          </article>
+          <aside class="mode-optional">
+            <div class="mode-optional-head"><strong>POS</strong><span>Modul opsional</span></div>
+            <p>Tersedia bila perusahaan juga melayani penjualan langsung.</p>
+            <ul class="mode-optional-list"><li>Kasir</li><li>Shift</li><li>Transaksi</li><li>Pembayaran</li><li>Laporan penjualan</li></ul>
+          </aside>
+        </div>
       </div>
-      <div class="platform-roadmap" data-reveal><span>Rencana platform berikutnya</span><div><span class="platform-roadmap-chip">macOS · belum tersedia</span><span class="platform-roadmap-chip">iOS · belum tersedia</span></div></div>
-    </div></section>
+    </section>
 
-    <section class="pricing section-pad" id="pricing" aria-labelledby="pricing-title"><div class="pricing-container">
-      <header class="pricing-heading" data-reveal><span class="pricing-index">[09] PAKET &amp; HARGA</span><h2 id="pricing-title">PILIH SESUAI KEBUTUHAN.</h2><p>Mulai dari satu toko hingga usaha dengan beberapa cabang.</p></header>
-      <div class="billing-controls" data-reveal>
-        <div class="billing-toggle" role="group" aria-label="Periode pembayaran"><button class="is-active" type="button" data-billing-choice="monthly" aria-pressed="true">Bulanan</button><button type="button" data-billing-choice="annual" aria-pressed="false">Tahunan</button></div>
-        <p class="billing-note" data-billing-note aria-live="polite">Bayar setiap bulan sesuai paket.</p>
+    <section class="section flow" id="alur" aria-labelledby="alur-title">
+      <div class="page-container">
+        <header class="section-head section-head--dark" data-reveal>
+          <div><h2 id="alur-title">Dari transaksi sampai peninjauan, tetap terekam.</h2></div>
+          <p>Pekerjaan harian tidak berhenti sebagai catatan. Tim melihat sinyal penting, mengambil keputusan, lalu menelusuri apa yang sudah terjadi.</p>
+        </header>
+        <ol class="flow-steps" data-reveal>
+          <li><span aria-hidden="true">01</span><h3>Catat</h3><p>Pembelian, persediaan, dan pekerjaan harian tercatat di sistem.</p></li>
+          <li><span aria-hidden="true">02</span><h3>Perbarui</h3><p>Stok dan status operasional ikut bergerak.</p></li>
+          <li><span aria-hidden="true">03</span><h3>Pantau</h3><p>Dashboard dan laporan menampilkan hal penting.</p></li>
+          <li><span aria-hidden="true">04</span><h3>Setujui</h3><p>Aktivitas penting diperiksa oleh orang yang tepat.</p></li>
+          <li><span aria-hidden="true">05</span><h3>Tinjau</h3><p>Keputusan dan perubahan dapat ditelusuri.</p></li>
+        </ol>
+        <div class="control-grid">
+          <article data-reveal><h3>Peran dan akses</h3><p>Setiap pengguna mendapat akses sesuai pekerjaan dan tanggung jawabnya.</p></article>
+          <article data-reveal><h3>Persetujuan dan PIN</h3><p>Tindakan penting diperiksa lebih dulu sebelum diselesaikan.</p></article>
+          <article data-reveal><h3>Akses per lokasi</h3><p>Akses dapat dibatasi per lokasi sesuai kebutuhan tiap peran.</p></article>
+          <article data-reveal><h3>Catatan audit</h3><p>Perubahan dan keputusan sensitif dapat ditinjau kembali.</p></article>
+        </div>
       </div>
-      <div class="pricing-grid">
-        <article class="price-card" data-reveal><header class="price-card-header"><div><span>01 / LOKAL</span><h3>Gratis</h3></div><span class="plan-mode">Data di perangkat</span></header><p class="plan-fit">Untuk mencoba kasir dan pencatatan stok dasar.</p><div class="price-amount"><strong data-plan-price data-monthly="Rp0" data-annual="Rp0">Rp0</strong><span data-plan-period data-monthly-period="tanpa biaya" data-annual-period="tanpa biaya">tanpa biaya</span></div><div class="plan-summary"><span>1 toko</span><span>Maksimal 1 perangkat</span></div><a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a><ul><li>Catat penjualan dan atur stok</li><li>Lihat riwayat transaksi dan laporan dasar</li><li>Cetak struk dan simpan cadangan data</li></ul></article>
-        <article class="price-card" data-reveal><header class="price-card-header"><div><span>02 / LOKAL</span><h3>Dasar</h3></div><span class="plan-mode">Data di perangkat</span></header><p class="plan-fit">Untuk warung atau toko yang ingin mengelola stok dan belanja dengan lebih rapi.</p><div class="price-amount"><strong data-plan-price data-monthly="Rp29.000" data-annual="Rp290.000">Rp29.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div><div class="plan-summary"><span>1 toko</span><span>Maksimal 1 perangkat</span></div><a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a><ul><li>Semua fitur paket Gratis</li><li>Catat pemasok dan belanja barang</li><li>Perbarui stok dan setujui perubahan penting</li></ul></article>
-        <article class="price-card price-card--featured" data-reveal><header class="price-card-header"><div><span>03 / LOKAL</span><h3>Tumbuh</h3></div><span class="plan-mode">Data di perangkat</span></header><p class="plan-fit">Untuk usaha yang mulai mengatur data pegawai dan jadwal kerja tim.</p><div class="price-amount"><strong data-plan-price data-monthly="Rp79.000" data-annual="Rp790.000">Rp79.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div><div class="plan-summary"><span>1 toko</span><span>Maksimal 1 perangkat</span></div><a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a><ul><li>Semua fitur paket Dasar</li><li>Catat kehadiran dan atur jadwal kerja</li><li>Kelola penggajian dan penilaian kinerja</li></ul></article>
-        <article class="price-card" data-reveal><header class="price-card-header"><div><span>04 / ONLINE</span><h3>Business</h3></div><span class="plan-mode">Sinkron online</span></header><p class="plan-fit">Untuk usaha dengan beberapa toko yang perlu berbagi data.</p><div class="price-amount"><strong data-plan-price data-monthly="Rp349.000" data-annual="Rp3.490.000">Rp349.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div><div class="plan-summary"><span>2 toko</span><span>Maksimal 3 perangkat</span></div><a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a><ul><li>Pegawai dapat melakukan presensi lewat HP sendiri</li><li>Lihat laporan gabungan dari toko yang terhubung</li><li>Kelola stok, pembelian, dan keuangan dasar</li></ul></article>
-        <article class="price-card" data-reveal><header class="price-card-header"><div><span>05 / ONLINE</span><h3>Enterprise</h3></div><span class="plan-mode">Sinkron online</span></header><p class="plan-fit">Untuk usaha dengan banyak cabang dan kebutuhan kontrol lebih lengkap.</p><div class="price-amount"><strong data-plan-price data-monthly="Rp1.499.000" data-annual="Rp14.990.000">Rp1.499.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div><div class="plan-summary"><span>5 cabang</span><span>Maksimal 10 perangkat</span></div><a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a><ul><li>Kelola presensi tim dari HP</li><li>Akses ke seluruh modul operasional</li><li>Atur akses tim dan tinjau laporan lintas cabang</li></ul></article>
+    </section>
+
+    <section class="section section--white" id="platform" aria-labelledby="platform-title">
+      <div class="page-container">
+        <header class="section-head" data-reveal>
+          <div><h2 id="platform-title">Satu sistem, pilih cara aksesnya.</h2></div>
+          <p>Versi web dapat dibuka lewat browser. Aplikasi Windows, Linux, dan Android sedang disiapkan; macOS dan iOS menyusul. Tombol unduh akan aktif setelah rilis resmi.</p>
+        </header>
+        <div class="platform-grid">
+          <article class="platform-card" data-reveal>
+            <header>
+              <span class="platform-logo"><img src="assets/icons/web.svg" width="40" height="40" alt=""></span>
+              <span class="platform-status platform-status--ready">Tersedia sekarang</span>
+            </header>
+            <h3>Web</h3>
+            <p>Gunakan Arian System di perangkat yang sudah mendukung browser modern.</p>
+            <a class="platform-action" href="https://arianstars.web.id/login">Buka halaman masuk <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="platform-card" data-reveal>
+            <header>
+              <span class="platform-logo"><img src="assets/icons/windows.svg" width="40" height="40" alt=""></span>
+              <span class="platform-status platform-status--prep">Sedang disiapkan</span>
+            </header>
+            <h3>Windows</h3>
+            <p>Untuk komputer kantor setelah installer resmi tersedia.</p>
+            <button class="platform-action platform-action--disabled" type="button" disabled>Unduhan segera tersedia</button>
+          </article>
+          <article class="platform-card" data-reveal>
+            <header>
+              <span class="platform-logo"><img src="assets/icons/linux.svg" width="40" height="40" alt=""></span>
+              <span class="platform-status platform-status--prep">Sedang disiapkan</span>
+            </header>
+            <h3>Linux</h3>
+            <p>Tombol unduh diaktifkan setelah rilis resmi tersedia.</p>
+            <button class="platform-action platform-action--disabled" type="button" disabled>Unduhan segera tersedia</button>
+          </article>
+          <article class="platform-card" data-reveal>
+            <header>
+              <span class="platform-logo"><img src="assets/icons/android.svg" width="40" height="40" alt=""></span>
+              <span class="platform-status platform-status--prep">Disiapkan untuk Google Play</span>
+            </header>
+            <h3>Android</h3>
+            <p>Akan diarahkan ke Google Play setelah listing resmi tersedia.</p>
+            <button class="platform-action platform-action--disabled" type="button" disabled>Segera tersedia di Google Play</button>
+          </article>
+          <article class="platform-card" data-reveal>
+            <header>
+              <span class="platform-logo"><img src="assets/icons/apple.svg" width="40" height="40" alt=""></span>
+              <span class="platform-status">Segera hadir</span>
+            </header>
+            <h3>macOS</h3>
+            <p>Untuk pengguna Mac setelah aplikasi resmi tersedia.</p>
+            <button class="platform-action platform-action--disabled" type="button" disabled>Unduhan segera tersedia</button>
+          </article>
+          <article class="platform-card" data-reveal>
+            <header>
+              <span class="platform-logo"><img src="assets/icons/apple.svg" width="40" height="40" alt=""></span>
+              <span class="platform-status">Segera hadir</span>
+            </header>
+            <h3>iOS</h3>
+            <p>Untuk iPhone dan iPad setelah rilis resmi tersedia.</p>
+            <button class="platform-action platform-action--disabled" type="button" disabled>Segera tersedia</button>
+          </article>
+        </div>
       </div>
-      <p class="pricing-footnote">Batas perangkat berlaku untuk seluruh usaha dan semua pengguna; HP pegawai untuk presensi juga dihitung. Paket Gratis, Dasar, dan Tumbuh menyimpan data di perangkat yang digunakan, tanpa sinkron otomatis ke perangkat lain. Harga tahunan dibayar sekaligus, setara 10 bulan harga bulanan.</p>
-      <div class="pricing-contact" data-reveal><div><span class="pricing-contact-label">PILIHAN SESUAI KEBUTUHAN</span><h3>Butuh lebih banyak perangkat?</h3></div><p>Bicarakan kebutuhan perangkat dan usaha Anda dengan admin lewat chat untuk mencari pilihan paket yang sesuai.</p></div>
-    </div></section>
+    </section>
 
-    <section class="credibility section-pad" aria-labelledby="credibility-title"><div class="page-container">
-      <header class="section-rail" data-reveal><span class="rail-tag rail-tag--dark"><i>[10]</i>DIRANCANG UNTUK PEKERJAAN NYATA</span><p>FITUR OPERASIONAL<br>DENGAN KONTROL YANG JELAS.</p></header>
-      <div class="credibility-heading" data-reveal><h2 id="credibility-title">BANTU TIM BEKERJA LEBIH TERATUR.</h2><p>Setiap fitur dirancang untuk membantu menjalankan pekerjaan harian dan meninjau aktivitas penting.</p></div>
-      <div class="credibility-list" data-reveal><article><span>01</span><h3>Akses sesuai peran</h3><p>Role, izin akses, persetujuan, dan PIN membatasi tindakan sesuai tanggung jawab.</p></article><article><span>02</span><h3>Informasi yang perlu dicek</h3><p>Peringatan stok, aktivitas tertunda, notifikasi, dan laporan membantu menentukan prioritas.</p></article><article><span>03</span><h3>Pilih lokal atau cloud</h3><p>Mulai dengan data di perangkat. Gunakan sinkronisasi cloud saat usaha memerlukan akses lintas perangkat.</p></article></div>
-    </div></section>
-
-    <section class="faq" id="faq" aria-labelledby="faq-title"><div class="faq-marquee" aria-hidden="true"><span>PERTANYAAN &amp; JAWABAN · PERTANYAAN &amp; JAWABAN · </span><span>PERTANYAAN &amp; JAWABAN · PERTANYAAN &amp; JAWABAN · </span></div><div class="page-container faq-layout">
-      <div class="faq-intro" data-reveal><span>[11] PERTANYAAN UMUM</span><h2 id="faq-title">SEBELUM MEMILIH PAKET.</h2></div>
-      <div class="faq-list" data-reveal>
-        <div class="faq-item is-open"><button type="button" aria-expanded="true" aria-controls="faq-1" data-faq-trigger><span>01</span>Arian System cocok untuk usaha seperti apa?<i aria-hidden="true"></i></button><div id="faq-1" class="faq-answer"><p>Rancangannya ditujukan untuk usaha kecil, toko, dan bisnis dengan beberapa outlet yang ingin mengelola penjualan, stok, karyawan, serta keuangan.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-2" data-faq-trigger><span>02</span>Apa bedanya data di perangkat dan data online?<i aria-hidden="true"></i></button><div id="faq-2" class="faq-answer" hidden><p>Paket Gratis, Dasar, dan Tumbuh menyimpan data di perangkat yang digunakan. Paket Business dan Enterprise dirancang agar data tersinkron online dan bisa dibuka dari toko atau perangkat yang terhubung.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-3" data-faq-trigger><span>03</span>Apakah HP pegawai ikut dihitung dalam batas perangkat?<i aria-hidden="true"></i></button><div id="faq-3" class="faq-answer" hidden><p>Ya. Semua HP, tablet, atau komputer yang digunakan untuk masuk ke sistem dihitung, siapa pun penggunanya. HP pegawai untuk presensi memakai kuota perangkat yang sama.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-4" data-faq-trigger><span>04</span>Apa bedanya orang yang memakai aplikasi dan data pegawai?<i aria-hidden="true"></i></button><div id="faq-4" class="faq-answer" hidden><p>Pemilik atau tim masuk ke aplikasi untuk menjalankan usaha. Data pegawai berisi informasi tentang karyawan. Pada paket tertentu, pegawai juga bisa melakukan presensi lewat HP.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-5" data-faq-trigger><span>05</span>Platform apa saja yang direncanakan?<i aria-hidden="true"></i></button><div id="faq-5" class="faq-answer" hidden><p>Akses Web tersedia melalui halaman masuk. Aplikasi Windows, Linux, dan Android sedang disiapkan. Android akan diarahkan ke Google Play setelah tersedia. macOS dan iOS direncanakan untuk tahap berikutnya; jadwal rilis belum ditetapkan.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-6" data-faq-trigger><span>06</span>Bagaimana memilih paket yang sesuai?<i aria-hidden="true"></i></button><div id="faq-6" class="faq-answer" hidden><p>Pilih berdasarkan jumlah toko dan perangkat yang digunakan. HP pegawai untuk presensi juga memakai kuota perangkat. Untuk kebutuhan khusus, bicarakan pilihan paket dengan admin.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-7" data-faq-trigger><span>07</span>Bagaimana jika kebutuhan usaha saya berbeda?<i aria-hidden="true"></i></button><div id="faq-7" class="faq-answer" hidden><p>Ceritakan kebutuhan toko, perangkat, dan tim Anda kepada admin lewat chat untuk membicarakan pilihan paket yang sesuai.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-8" data-faq-trigger><span>08</span>Bagaimana pembayaran tahunan dihitung?<i aria-hidden="true"></i></button><div id="faq-8" class="faq-answer" hidden><p>Harga tahunan dibayar sekaligus dengan total setara 10 kali harga bulanan.</p></div></div>
-        <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-9" data-faq-trigger><span>09</span>Apakah data dihapus saat langganan berakhir?<i aria-hidden="true"></i></button><div id="faq-9" class="faq-answer" hidden><p>Kebijakan masa tenggang, akses baca, ekspor, dan penyimpanan data akan ditetapkan sebelum langganan diluncurkan. Halaman ini tidak menjanjikan penghapusan otomatis.</p></div></div>
+    <section class="section" id="cara-mulai" aria-labelledby="cara-title">
+      <div class="page-container">
+        <header class="section-head" data-reveal>
+          <div><h2 id="cara-title">Siapkan, jalankan, pantau, kendalikan.</h2></div>
+          <p>Susun data perusahaan lebih dulu; setelah itu pekerjaan harian, pemantauan, dan keputusan mengikuti alur yang sama.</p>
+        </header>
+        <div class="process-system" data-reveal>
+          <div class="process-tabs" role="tablist" aria-label="Tahapan penggunaan Arian System">
+            <button class="is-active" id="process-tab-1" type="button" role="tab" aria-selected="true" aria-controls="process-panel-1" data-process-tab="0"><span aria-hidden="true">01</span>Persiapan</button>
+            <button id="process-tab-2" type="button" role="tab" aria-selected="false" aria-controls="process-panel-2" data-process-tab="1" tabindex="-1"><span aria-hidden="true">02</span>Jalankan</button>
+            <button id="process-tab-3" type="button" role="tab" aria-selected="false" aria-controls="process-panel-3" data-process-tab="2" tabindex="-1"><span aria-hidden="true">03</span>Pantau</button>
+            <button id="process-tab-4" type="button" role="tab" aria-selected="false" aria-controls="process-panel-4" data-process-tab="3" tabindex="-1"><span aria-hidden="true">04</span>Kendalikan</button>
+          </div>
+          <div class="process-panels">
+            <div class="process-panel is-active" id="process-panel-1" role="tabpanel" aria-labelledby="process-tab-1" data-process-panel="0">
+              <div><h3>Siapkan lokasi, peran, dan data utama.</h3><p>Masukkan data lokasi, karyawan, produk, dan hak akses yang akan dipakai tim.</p></div>
+              <div class="process-art process-art--setup"><span>Lokasi</span><i>→</i><span>Peran</span><i>→</i><span>Data</span></div>
+            </div>
+            <div class="process-panel" id="process-panel-2" role="tabpanel" aria-labelledby="process-tab-2" data-process-panel="1" hidden>
+              <div><h3>Jalankan operasional dari satu sistem.</h3><p>Tim melakukan presensi, pembelian dan transaksi dicatat, stok bergerak, dan pengajuan masuk.</p></div>
+              <ol class="operation-flow"><li><small>01</small><strong>Presensi</strong></li><li><small>02</small><strong>Pembelian</strong></li><li><small>03</small><strong>Transaksi</strong></li><li><small>04</small><strong>Stok</strong></li><li><small>05</small><strong>Pengajuan</strong></li></ol>
+            </div>
+            <div class="process-panel" id="process-panel-3" role="tabpanel" aria-labelledby="process-tab-3" data-process-panel="2" hidden>
+              <div><h3>Lihat apa yang perlu diperhatikan.</h3><p>Ringkasan, peringatan stok, transaksi tertunda, laporan, notifikasi, dan persetujuan membantu tim menentukan prioritas.</p></div>
+              <div class="process-art process-art--monitor"><b>04</b><span>hal yang perlu<br>diperiksa</span></div>
+            </div>
+            <div class="process-panel" id="process-panel-4" role="tabpanel" aria-labelledby="process-tab-4" data-process-panel="3" hidden>
+              <div><h3>Putuskan dengan konteks dan catatan.</h3><p>Keputusan penting memiliki status dan pihak yang menyetujui, serta dapat ditelusuri kembali.</p></div>
+              <div class="process-art process-art--control"><span>Pengajuan</span><i aria-hidden="true"></i><span>Setuju</span><i aria-hidden="true"></i><b>Catatan</b></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div></section>
+    </section>
 
+    <section class="section section--white" id="harga" aria-labelledby="harga-title">
+      <div class="page-container">
+        <header class="section-head" data-reveal>
+          <div><h2 id="harga-title">Pilih sesuai kebutuhan perusahaan.</h2></div>
+          <p>Mulai dari satu lokasi dengan data di perangkat, hingga beberapa cabang dengan data tersinkron.</p>
+        </header>
+        <div class="growth-strip" data-reveal>
+          <article><span aria-hidden="true">01</span><h3>Satu lokasi</h3><p>Pembelian, stok, dan data tim tersimpan di perangkat.</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span aria-hidden="true">02</span><h3>Beberapa lokasi</h3><p>Lokasi, presensi karyawan, dan laporan terhubung lewat cloud.</p></article>
+          <i aria-hidden="true">→</i>
+          <article><span aria-hidden="true">03</span><h3>Operasional lebih luas</h3><p>Akses, persetujuan, dan laporan ditinjau lintas cabang.</p></article>
+        </div>
+        <div class="billing-controls" data-reveal>
+          <div class="billing-toggle" role="group" aria-label="Periode pembayaran"><button class="is-active" type="button" data-billing-choice="monthly" aria-pressed="true">Bulanan</button><button type="button" data-billing-choice="annual" aria-pressed="false">Tahunan</button></div>
+          <p class="billing-note" data-billing-note aria-live="polite">Bayar setiap bulan sesuai paket.</p>
+        </div>
+        <div class="plan-group">
+          <header class="plan-group-head" data-reveal><h3>Lokal</h3><p>Data tersimpan di perangkat yang digunakan, tanpa sinkron otomatis. Cocok untuk memulai dari satu lokasi.</p></header>
+          <div class="plan-grid plan-grid--local">
+            <article class="price-card" data-reveal>
+              <header><h4>Gratis</h4><p class="plan-fit">Untuk mencoba pencatatan operasional dan stok dasar.</p></header>
+              <div class="price-amount"><strong data-plan-price data-monthly="Rp0" data-annual="Rp0">Rp0</strong><span data-plan-period data-monthly-period="tanpa biaya" data-annual-period="tanpa biaya">tanpa biaya</span></div>
+              <p class="plan-summary">1 lokasi · maksimal 1 perangkat</p>
+              <a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a>
+              <ul><li>Catat transaksi dan atur stok</li><li>Lihat riwayat transaksi dan laporan dasar</li><li>Cetak struk dan simpan cadangan data</li></ul>
+            </article>
+            <article class="price-card" data-reveal>
+              <header><h4>Dasar</h4><p class="plan-fit">Untuk usaha yang ingin mengelola stok dan belanja lebih rapi.</p></header>
+              <div class="price-amount"><strong data-plan-price data-monthly="Rp29.000" data-annual="Rp290.000">Rp29.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div>
+              <p class="plan-summary">1 lokasi · maksimal 1 perangkat</p>
+              <a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a>
+              <ul><li>Semua fitur paket Gratis</li><li>Catat pemasok dan belanja barang</li><li>Perbarui stok dan setujui perubahan penting</li></ul>
+            </article>
+            <article class="price-card" data-reveal>
+              <header><h4>Tumbuh</h4><p class="plan-fit">Untuk perusahaan yang mulai mengatur data pegawai dan jadwal kerja tim.</p></header>
+              <div class="price-amount"><strong data-plan-price data-monthly="Rp79.000" data-annual="Rp790.000">Rp79.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div>
+              <p class="plan-summary">1 lokasi · maksimal 1 perangkat</p>
+              <a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a>
+              <ul><li>Semua fitur paket Dasar</li><li>Catat kehadiran dan atur jadwal kerja</li><li>Kelola penggajian dan penilaian kinerja</li></ul>
+            </article>
+          </div>
+        </div>
+        <div class="plan-group">
+          <header class="plan-group-head" data-reveal><h3>Online</h3><p>Data tersinkron antar lokasi. Presensi lewat HP pegawai dan laporan gabungan ikut aktif.</p></header>
+          <div class="plan-grid plan-grid--online">
+            <article class="price-card" data-reveal>
+              <header><h4>Business</h4><p class="plan-fit">Untuk perusahaan dengan beberapa lokasi yang perlu berbagi data.</p></header>
+              <div class="price-amount"><strong data-plan-price data-monthly="Rp349.000" data-annual="Rp3.490.000">Rp349.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div>
+              <p class="plan-summary">2 lokasi · maksimal 3 perangkat</p>
+              <a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a>
+              <ul><li>Pegawai dapat melakukan presensi lewat HP sendiri</li><li>Lihat laporan gabungan dari lokasi yang terhubung</li><li>Kelola stok, pembelian, dan keuangan dasar</li></ul>
+            </article>
+            <article class="price-card" data-reveal>
+              <header><h4>Enterprise</h4><p class="plan-fit">Untuk perusahaan dengan banyak cabang dan kebutuhan kontrol lebih lengkap.</p></header>
+              <div class="price-amount"><strong data-plan-price data-monthly="Rp1.499.000" data-annual="Rp14.990.000">Rp1.499.000</strong><span data-plan-period data-monthly-period="/bulan" data-annual-period="/tahun">/bulan</span></div>
+              <p class="plan-summary">5 cabang · maksimal 10 perangkat</p>
+              <a class="plan-cta" href="https://arianstars.web.id/register">Buat akun <span aria-hidden="true">↗</span></a>
+              <ul><li>Kelola presensi tim dari HP</li><li>Akses ke seluruh modul operasional</li><li>Atur akses tim dan tinjau laporan lintas cabang</li></ul>
+            </article>
+          </div>
+        </div>
+        <p class="pricing-footnote">Batas perangkat berlaku untuk seluruh perusahaan dan semua pengguna; HP pegawai untuk presensi juga dihitung. Harga tahunan dibayar sekaligus, setara 10 bulan harga bulanan.</p>
+        <div class="pricing-contact" data-reveal>
+          <h3>Butuh lebih banyak perangkat?</h3>
+          <p>Bicarakan kebutuhan perangkat dan perusahaan Anda dengan admin lewat chat untuk mencari pilihan paket yang sesuai.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="page-container faq-layout">
+        <div class="faq-intro" data-reveal><h2 id="faq-title">Sebelum memilih paket.</h2><p>Pertanyaan yang paling sering muncul tentang paket, perangkat, dan platform.</p></div>
+        <div class="faq-list" data-reveal>
+          <div class="faq-item is-open"><button type="button" aria-expanded="true" aria-controls="faq-1" data-faq-trigger><span aria-hidden="true">01</span>Arian System cocok untuk perusahaan seperti apa?<i aria-hidden="true"></i></button><div id="faq-1" class="faq-answer"><p>Rancangannya ditujukan untuk perusahaan yang pekerjaan hariannya melibatkan pembelian, persediaan, keuangan, tim, dan persetujuan — dengan satu atau beberapa lokasi.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-2" data-faq-trigger><span aria-hidden="true">02</span>Apa bedanya data di perangkat dan data online?<i aria-hidden="true"></i></button><div id="faq-2" class="faq-answer" hidden><p>Paket Gratis, Dasar, dan Tumbuh menyimpan data di perangkat yang digunakan. Paket Business dan Enterprise dirancang agar data tersinkron online dan bisa dibuka dari lokasi atau perangkat yang terhubung.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-3" data-faq-trigger><span aria-hidden="true">03</span>Apakah HP pegawai ikut dihitung dalam batas perangkat?<i aria-hidden="true"></i></button><div id="faq-3" class="faq-answer" hidden><p>Ya. Semua HP, tablet, atau komputer yang digunakan untuk masuk ke sistem dihitung, siapa pun penggunanya. HP pegawai untuk presensi memakai kuota perangkat yang sama.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-4" data-faq-trigger><span aria-hidden="true">04</span>Apa bedanya pengguna aplikasi dan data pegawai?<i aria-hidden="true"></i></button><div id="faq-4" class="faq-answer" hidden><p>Pemilik atau tim masuk ke aplikasi untuk menjalankan operasional perusahaan. Data pegawai berisi informasi tentang karyawan. Pada paket tertentu, pegawai juga bisa melakukan presensi lewat HP.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-5" data-faq-trigger><span aria-hidden="true">05</span>Platform apa saja yang direncanakan?<i aria-hidden="true"></i></button><div id="faq-5" class="faq-answer" hidden><p>Akses Web tersedia melalui halaman masuk. Aplikasi Windows, Linux, dan Android sedang disiapkan. Android akan diarahkan ke Google Play setelah tersedia. macOS dan iOS direncanakan untuk tahap berikutnya; jadwal rilis belum ditetapkan.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-6" data-faq-trigger><span aria-hidden="true">06</span>Bagaimana memilih paket yang sesuai?<i aria-hidden="true"></i></button><div id="faq-6" class="faq-answer" hidden><p>Pilih berdasarkan jumlah lokasi dan perangkat yang digunakan. HP pegawai untuk presensi juga memakai kuota perangkat. Untuk kebutuhan khusus, bicarakan pilihan paket dengan admin.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-7" data-faq-trigger><span aria-hidden="true">07</span>Bagaimana jika kebutuhan perusahaan saya berbeda?<i aria-hidden="true"></i></button><div id="faq-7" class="faq-answer" hidden><p>Ceritakan kebutuhan perusahaan, perangkat, dan tim Anda kepada admin lewat chat untuk membicarakan pilihan paket yang sesuai.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-8" data-faq-trigger><span aria-hidden="true">08</span>Bagaimana pembayaran tahunan dihitung?<i aria-hidden="true"></i></button><div id="faq-8" class="faq-answer" hidden><p>Harga tahunan dibayar sekaligus dengan total setara 10 kali harga bulanan.</p></div></div>
+          <div class="faq-item"><button type="button" aria-expanded="false" aria-controls="faq-9" data-faq-trigger><span aria-hidden="true">09</span>Apakah data dihapus saat langganan berakhir?<i aria-hidden="true"></i></button><div id="faq-9" class="faq-answer" hidden><p>Kebijakan masa tenggang, akses baca, ekspor, dan penyimpanan data akan ditetapkan sebelum langganan diluncurkan. Halaman ini tidak menjanjikan penghapusan otomatis.</p></div></div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="page-container footer-main"><div><a class="brand brand--light" href="#top"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>ARIAN</span></a><p>Operasional lebih rapi.<br>Kontrol lebih jelas.</p><div class="footer-actions"><a class="footer-cta" href="https://arianstars.web.id/register"><span>Daftar Arian System</span><i aria-hidden="true">↗</i></a><a class="footer-login" href="https://arianstars.web.id/login">Sudah punya akun? Masuk</a></div></div><nav aria-label="Navigasi footer"><a href="#product">Fitur <sup>01</sup></a><a href="#pos-oms">POS + Operasional <sup>02</sup></a><a href="#downloads">Platform <sup>03</sup></a><a href="#pricing">Paket &amp; Harga <sup>04</sup></a><a href="#faq">FAQ <sup>05</sup></a></nav><a class="back-top" href="#top" aria-label="Kembali ke atas">↑</a></div><div class="footer-wordmark" aria-hidden="true">ARIAN SYSTEM</div><div class="page-container footer-bottom"><span>© 2026 ARIAN SYSTEM</span><span>PLATFORM OPERASIONAL UNTUK USAHA</span><span>INDONESIA</span></div></footer>
+  <footer class="site-footer">
+    <div class="page-container footer-main">
+      <div class="footer-brand">
+        <a class="brand brand--light" href="#top"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>ARIAN</span></a>
+        <p>Operasional lebih rapi.<br>Kontrol lebih jelas.</p>
+        <div class="footer-actions">
+          <a class="footer-cta" href="https://arianstars.web.id/register">Daftar Arian System <span aria-hidden="true">↗</span></a>
+          <a class="footer-login" href="https://arianstars.web.id/login">Sudah punya akun? Masuk</a>
+        </div>
+      </div>
+      <nav aria-label="Navigasi footer">
+        <a href="#produk">Fitur</a>
+        <a href="#kelola">Pengelolaan</a>
+        <a href="#platform">Platform</a>
+        <a href="#harga">Paket &amp; Harga</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+    <div class="footer-wordmark" aria-hidden="true">ARIAN SYSTEM</div>
+    <div class="page-container footer-bottom"><span>© 2026 ARIAN SYSTEM</span><span>PLATFORM OPERASIONAL PERUSAHAAN</span><span>INDONESIA</span></div>
+  </footer>
   <script src="js/main.js" defer></script>
 </body>
 </html>

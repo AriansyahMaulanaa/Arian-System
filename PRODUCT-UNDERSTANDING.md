@@ -5,7 +5,7 @@ Source: read-only inspection of the sibling Laravel repository `ArianHR`, the Ar
 ## Product identity and audience
 
 - Current page brand: Arian System. A possible future brand change is not confirmed and is not applied here.
-- Product direction: operational management for Indonesian small businesses, retail, and multi-outlet operators.
+- Product direction: operational management (OMS-led) for Indonesian companies; POS is presented as an optional module for companies that also sell directly. Landing copy uses generic company/location wording; export-specific capabilities are not claimed until verified.
 - Main work areas: POS, stock, purchasing, employees, attendance, payroll, finance, approvals, and audit.
 - Roles found in application seed/config include owner/admin, HR, manager/supervisor, cashier, director, and employee.
 
@@ -26,14 +26,14 @@ These source capabilities do **not** prove that every feature is ready for every
 
 ## Commercial package proposal — not final
 
-Product-owner planning proposes five packages, with data stored on-device for the first three and online synchronization for Business/Enterprise. The landing displays only draft prices and simple shop/device summaries; detailed account, employee, catalog, supplier, and storage limits are omitted while they remain unverified. The device cap is a single organization-wide total across branches and roles, including employee phones used to sign in for attendance.
+Product-owner planning proposes five packages, with data stored on-device for the first three and online synchronization for Business/Enterprise. The landing displays only draft prices and simple location/device summaries; detailed account, employee, catalog, supplier, and storage limits are omitted while they remain unverified. The device cap is a single organization-wide total across branches and roles, including employee phones used to sign in for attendance.
 
-| Package | Monthly draft | Annual draft | Shops/branches | Maximum devices (all roles) |
+| Package | Monthly draft | Annual draft | Locations/branches | Maximum devices (all roles) |
 | --- | ---: | ---: | ---: | ---: |
-| Gratis | Rp0 | Rp0 | 1 shop | 1 |
-| Dasar | Rp29.000 | Rp290.000 | 1 shop | 1 |
-| Tumbuh | Rp79.000 | Rp790.000 | 1 shop | 1 |
-| Business | Rp349.000 | Rp3.490.000 | 2 shops | 3 |
+| Gratis | Rp0 | Rp0 | 1 location | 1 |
+| Dasar | Rp29.000 | Rp290.000 | 1 location | 1 |
+| Tumbuh | Rp79.000 | Rp790.000 | 1 location | 1 |
+| Business | Rp349.000 | Rp3.490.000 | 2 locations | 3 |
 | Enterprise | Rp1.499.000 | Rp14.990.000 | 5 branches | 10 |
 
 The annual draft equals ten monthly payments and is an upfront total. The device cap is shared by all users in the organization, regardless of role; an employee's attendance phone counts as a device. No add-on rates are published; special requirements should be discussed with an admin rather than shown as fixed prices.
@@ -62,7 +62,8 @@ Organization creation, plan selection, billing, trials, upgrade/downgrade, downl
 
 ## Landing-page direction
 
-- Keep the existing editorial design: paper-gray surfaces, large black typography, blue accents, dark contrast areas, thin rules, restrained motion, and product screenshots.
+- Keep the existing editorial design: warm paper surfaces, white cards with firm hairline borders, large black typography, blue accents, dark contrast areas, restrained motion, and product screenshots.
+- Present the OMS as the core and POS as an optional module; use generic company/location wording instead of retail-specific terms.
 - Make the value proposition and local-vs-cloud distinction immediately understandable.
 - Use Indonesian for navigation, package descriptions, platform status, and the primary user explanation; retain familiar product terms where useful.
 - Show draft monthly/annual prices, shop/device counts, and the local-versus-online difference in plain language; do not expose unverified account/employee caps or fixed add-on prices.
@@ -74,3 +75,4 @@ Organization creation, plan selection, billing, trials, upgrade/downgrade, downl
 - Final plan feature gating, device/account enforcement, add-on implementation, cloud capacity, offline licensing period, retention, backup guarantees, and support SLA.
 - Official Windows/Linux release links, Android Play listing, and macOS/iOS release dates.
 - Customer references, case studies, ratings, customer counts, revenue outcomes, uptime, security certifications, or quantified performance claims.
+- Export-specific capabilities (multi-currency, export documentation, batch/lot, multi-warehouse) — do not claim them on the landing page until they are verified in the application.
