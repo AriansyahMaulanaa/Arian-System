@@ -3,6 +3,47 @@
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const customCursor = document.querySelector('[data-custom-cursor]');
+  const cursorMedia = window.matchMedia('(hover: hover) and (pointer: fine)');
+  if (customCursor && cursorMedia.matches && !reducedMotion) {
+    const cursorLabel = customCursor.querySelector('[data-cursor-label]');
+    const cursorTargets = 'a[href],button:not([disabled]),[role="button"],[data-cursor-interactive]';
+    const getCursorTarget = (node) => node instanceof Element ? node.closest(cursorTargets) : null;
+    const updateCursorTarget = (target) => {
+      customCursor.classList.toggle('is-interactive', Boolean(target));
+      if (!cursorLabel) return;
+      if (!target) {
+        cursorLabel.textContent = '';
+        return;
+      }
+      const ariaLabel = target.getAttribute('aria-label') || '';
+      cursorLabel.textContent = target.dataset.cursorLabel || (/geser|berikut|selanjutnya|kembali/i.test(ariaLabel)
+        ? 'GESER'
+        : target.matches('button,[role="button"]') ? 'PILIH' : 'BUKA');
+    };
+
+    document.documentElement.classList.add('has-custom-cursor');
+    document.addEventListener('pointermove', (event) => {
+      if (event.pointerType === 'touch') return;
+      customCursor.style.setProperty('--cursor-x', `${event.clientX}px`);
+      customCursor.style.setProperty('--cursor-y', `${event.clientY}px`);
+      customCursor.classList.add('is-visible');
+      customCursor.classList.toggle('is-hidden-over-input', Boolean(event.target.closest?.('input,textarea,[contenteditable="true"]')));
+    }, { passive: true });
+    document.addEventListener('pointerover', (event) => updateCursorTarget(getCursorTarget(event.target)), { passive: true });
+    document.addEventListener('pointerout', (event) => {
+      const previous = getCursorTarget(event.target);
+      const next = getCursorTarget(event.relatedTarget);
+      if (previous !== next) updateCursorTarget(next);
+      if (!event.relatedTarget) customCursor.classList.remove('is-visible');
+    }, { passive: true });
+    document.addEventListener('pointerdown', (event) => {
+      if (event.button === 0) customCursor.classList.add('is-pressed');
+    }, { passive: true });
+    document.addEventListener('pointerup', () => customCursor.classList.remove('is-pressed'), { passive: true });
+    window.addEventListener('blur', () => customCursor.classList.remove('is-visible', 'is-pressed'));
+  }
+
   const header = document.querySelector('[data-header]');
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileMenu = document.querySelector('[data-mobile-menu]');
@@ -243,4 +284,49 @@
       });
     });
   });
-})();
+  const factButtons = [...document.querySelectorAll('[data-fact]')];
+  const factCopy = document.querySelector('[data-fact-copy]');
+  factButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      factButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      if (factCopy) factCopy.textContent = button.dataset.factDetail || '';
+    });
+  });
+
+  const controlCards = [...document.querySelectorAll('[data-control-card]')];
+  const controlIndex = document.querySelector('[data-control-index]');
+  let activeControl = 0;
+  const selectControl = (nextIndex) => {
+    if (!controlCards.length) return;
+    activeControl = (nextIndex + controlCards.length) % controlCards.length;
+    controlCards.forEach((card, index) => {
+      const offset = (index - activeControl + controlCards.length) % controlCards.length;
+      const active = offset === 0;
+      card.classList.toggle('is-active', active);
+      card.classList.toggle('is-before', offset === controlCards.length - 1);
+      card.classList.toggle('is-after', offset === 1);
+      card.setAttribute('aria-hidden', String(!active));
+      card.inert = !active;
+    });
+    if (controlIndex) {
+      const current = String(activeControl + 1).padStart(2, '0');
+      const total = String(controlCards.length).padStart(2, '0');
+      controlIndex.textContent = current + ' / ' + total;
+    }
+  };
+  document.querySelector('[data-control-prev]')?.addEventListener('click', () => selectControl(activeControl - 1));
+  document.querySelector('[data-control-next]')?.addEventListener('click', () => selectControl(activeControl + 1));
+  document.querySelector('#alur')?.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      selectControl(activeControl - 1);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      selectControl(activeControl + 1);
+    }
+  });
+  selectControl(0);})();
